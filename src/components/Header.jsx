@@ -1,5 +1,6 @@
 import React from "react";
-import { Search, Sparkles, AlertTriangle, ShieldCheck, Activity } from "lucide-react";
+import { Search, Sparkles, Send, Activity, ShieldAlert } from "lucide-react";
+import { TELEGRAM_CONFIG } from "../services/telegramService";
 
 export default function Header({ searchQuery, setSearchQuery, onOpenAI, onGoHome, currentScreen }) {
   return (
@@ -32,8 +33,7 @@ export default function Header({ searchQuery, setSearchQuery, onOpenAI, onGoHome
             backgroundColor: "var(--colors-primary)",
             display: "flex",
             alignItems: "center",
-            justifyContent: "content",
-            placeContent: "center",
+            justifyContent: "center",
             fontWeight: "bold",
             color: "white",
             fontSize: "20px",
@@ -75,7 +75,7 @@ export default function Header({ searchQuery, setSearchQuery, onOpenAI, onGoHome
         </div>
 
         {/* Center: Global Search Bar */}
-        <div style={{ flex: 1, maxWidth: "460px", position: "relative" }}>
+        <div style={{ flex: 1, maxWidth: "420px", position: "relative" }}>
           <Search 
             size={18} 
             color="var(--colors-muted)" 
@@ -106,6 +106,18 @@ export default function Header({ searchQuery, setSearchQuery, onOpenAI, onGoHome
 
         {/* Right Actions */}
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          
+          {/* Telegram Connected Badge */}
+          <div className="badge-pill" style={{
+            backgroundColor: "rgba(0, 136, 204, 0.15)",
+            color: "#38bdf8",
+            border: "1px solid rgba(0, 136, 204, 0.3)",
+            fontSize: "12px",
+            padding: "6px 14px"
+          }}>
+            <Send size={12} color="#38bdf8" /> Telegram: {TELEGRAM_CONFIG.chatId}
+          </div>
+
           {currentScreen === "detail" && (
             <button 
               onClick={onGoHome}

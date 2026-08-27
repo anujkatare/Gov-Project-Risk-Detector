@@ -2,31 +2,137 @@ import React, { useState } from "react";
 import { 
   ArrowLeft, AlertTriangle, Calendar, TrendingUp, DollarSign, 
   CheckCircle2, Clock, Activity, BarChart3, Layers, Compass, 
-  Cpu, FileSpreadsheet, ShieldAlert, Sparkles, ChevronRight
+  Cpu, FileSpreadsheet, ShieldAlert, Sparkles, ChevronRight, Send, Check
 } from "lucide-react";
 import { 
   ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, 
   Legend, BarChart, Bar, Cell
 } from "recharts";
+import { sendTelegramAlert, TELEGRAM_CONFIG } from "../services/telegramService";
 
 export default function ProjectDetailView({ project, onBack, onOpenAI }) {
   const [activeTab, setActiveTab] = useState("TabA"); // 'TabA', 'TabB', 'TabC'
+  const [telegramStatus, setTelegramStatus] = useState("idle"); // 'idle' | 'sending' | 'sent' | 'error'
+  const [statusMsg, setStatusMsg] = useState("");
 
   if (!project) return null;
 
+  const isHighRisk85Plus = project.riskScore >= 85;
   const badgeClass = project.riskBand === "Red" ? "badge-red" : project.riskBand === "Yellow" ? "badge-yellow" : "badge-green";
+
+  const handleManualTelegramDispatch = async () => {
+    setTelegramStatus("sending");
+    const result = await sendTelegramAlert(project, "Manual User Dispatch Button");
+    if (result.success) {
+      setTelegramStatus("sent");
+      setStatusMsg(`✅ Telegram Alert successfully sent to Chat ID ${TELEGRAM_CONFIG.chatId}!`);
+      setTimeout(() => setTelegramStatus("idle"), 5000);
+    } else {
+      setTelegramStatus("error");
+      setStatusMsg(`❌ Error: ${result.error}`);
+      setTimeout(() => setTelegramStatus("idle"), 5000);
+    }
+  };
 
   return (
     <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "32px 24px 64px 24px" }}>
       
-      {/* Back button */}
-      <button 
-        onClick={onBack}
-        className="btn-pill-secondary"
-        style={{ marginBottom: "24px" }}
-      >
-        <ArrowLeft size={16} /> Back to Dashboard
-      </button>
+      {/* Top Bar Actions */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px" }}>
+        <button 
+          onClick={onBack}
+          className="btn-pill-secondary"
+        >
+          <ArrowLeft size={16} /> Back to Dashboard
+        </button>
+
+        {/* Telegram Chat Attachment Banner */}
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ fontSize: "13px", color: "var(--colors-body)", fontWeight: "500" }}>
+            Telegram Target ID: <strong className="num-mono" style={{ color: "var(--colors-ink)" }}>{TELEGRAM_CONFIG.chatId}</strong>
+          </span>
+
+          <button
+            onClick={handleManualTelegramDispatch}
+            disabled={telegramStatus === "sending"}
+            className="btn-pill-primary"
+            style={{
+              backgroundColor: telegramStatus === "sent" ? "#05b169" : "#0088cc",
+              fontSize: "13px",
+              padding: "8px 18px",
+              boxShadow: "0 4px 12px rgba(0, 136, 204, 0.3)"
+            }}
+          >
+            {telegramStatus === "sending" ? (
+              <>Sending Telegram Alert...</>
+            ) : telegramStatus === "sent" ? (
+              <><Check size={16} /> Alert Sent to {TELEGRAM_CONFIG.chatId}</>
+            ) : (
+              <><Send size={15} /> Send Telegram Alert (Chat ID: {TELEGRAM_CONFIG.chatId})</>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Toast Notification */}
+      {statusMsg && (
+        <div style={{
+          backgroundColor: telegramStatus === "sent" ? "rgba(5, 177, 105, 0.15)" : "rgba(207, 32, 47, 0.15)",
+          color: telegramStatus === "sent" ? "#05b169" : "#cf202f",
+          border: `1px solid ${telegramStatus === 'sent' ? '#05b169' : '#cf202f'}`,
+          borderRadius: "var(--rounded-lg)",
+          padding: "14px 20px",
+          marginBottom: "24px",
+          fontSize: "14px",
+          fontWeight: "600",
+          display: "flex",
+          alignItems: "center",
+          gap: "10px"
+        }}>
+          <Send size={18} /> {statusMsg}
+        </div>
+      )}
+
+      {/* 85+ Risk Score Telegram Auto-Alert Notification Banner */}
+      {isHighRisk85Plus && (
+        <div style={{
+          backgroundColor: "rgba(207, 32, 47, 0.1)",
+          border: "2px solid var(--colors-semantic-down)",
+          borderRadius: "var(--rounded-xl)",
+          padding: "18px 24px",
+          marginBottom: "28px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "16px"
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+            <div style={{
+              width: "42px", height: "42px", borderRadius: "50%",
+              backgroundColor: "var(--colors-semantic-down)", display: "flex",
+              alignItems: "center", justifyContent: "center", color: "white"
+            }}>
+              <ShieldAlert size={24} />
+            </div>
+            <div>
+              <div style={{ fontWeight: "700", fontSize: "16px", color: "var(--colors-semantic-down)" }}>
+                CRITICAL HIGH RISK BREACH (&ge; 85 Risk Score Detected)
+              </div>
+              <div style={{ fontSize: "13px", color: "var(--colors-body)", marginTop: "2px" }}>
+                This project has reached a high risk score of <strong>{project.riskScore}/100</strong>. Automated Telegram Bot is configured to alert Chat ID: <strong>{TELEGRAM_CONFIG.chatId}</strong>.
+              </div>
+            </div>
+          </div>
+
+          <button
+            onClick={handleManualTelegramDispatch}
+            className="btn-pill-primary"
+            style={{ backgroundColor: "#cf202f", fontSize: "13px", padding: "8px 18px", whiteSpace: "nowrap" }}
+          >
+            <Send size={14} /> Dispatch Telegram Alert Now
+          </button>
+        </div>
+      )}
 
       {/* Header Banner (Dark Elevated Coinbase Card) */}
       <div style={{
@@ -59,6 +165,9 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
             <span className={`badge-pill ${badgeClass}`}>
               {project.statusBadge}
             </span>
+            <span className="badge-pill" style={{ backgroundColor: "rgba(0, 136, 204, 0.2)", color: "#38bdf8" }}>
+              Chat ID: {TELEGRAM_CONFIG.chatId}
+            </span>
           </div>
 
           <h1 className="display-lg" style={{ color: "#ffffff", marginBottom: "8px" }}>
@@ -77,7 +186,7 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
           borderRadius: "var(--rounded-xl)",
           padding: "24px 32px",
           textAlign: "center",
-          minWidth: "200px"
+          minWidth: "220px"
         }}>
           <div style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "var(--colors-on-dark-soft)", marginBottom: "4px" }}>
             PAIMANA Risk Score
@@ -139,7 +248,7 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
             {project.originalDate} → {project.predictedDate}
           </div>
           <div style={{ fontSize: "13px", color: "var(--colors-semantic-yellow)", fontWeight: "600", marginTop: "4px" }}>
-            +{project.delayMonths} Months Schedule Delay
+            +{project.delayDays} Days Schedule Delay
           </div>
         </div>
 
@@ -156,7 +265,6 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
               vs {project.expectedProgress}% Expected
             </span>
           </div>
-          {/* Progress Bar */}
           <div style={{
             width: "100%", height: "8px", borderRadius: "4px", backgroundColor: "var(--colors-surface-strong)",
             overflow: "hidden", marginTop: "8px"
@@ -191,8 +299,7 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
-            gap: "8px",
-            transition: "all 0.2s ease"
+            gap: "8px"
           }}
         >
           <Activity size={16} /> Tab A: Predictive Analysis & Timeline Forecasting
@@ -211,8 +318,7 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
-            gap: "8px",
-            transition: "all 0.2s ease"
+            gap: "8px"
           }}
         >
           <Cpu size={16} /> Tab B: Driver Analysis & Explainable AI (SHAP)
@@ -231,19 +337,16 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
-            gap: "8px",
-            transition: "all 0.2s ease"
+            gap: "8px"
           }}
         >
           <Layers size={16} /> Tab C: Benchmarking & Peer Analytics
         </button>
       </div>
 
-      {/* Tab A Content: Predictive Analysis & Timeline Forecasting */}
+      {/* Tab A Content */}
       {activeTab === "TabA" && (
         <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
-          
-          {/* Line Chart Component */}
           <div className="card-coinbase">
             <h3 className="display-md" style={{ fontSize: "20px", fontWeight: "600", marginBottom: "6px" }}>
               Cost & Schedule Variance Graph
@@ -257,42 +360,16 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
                 <LineChart data={project.timelineCurve} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                   <XAxis dataKey="quarter" tick={{ fontSize: 12 }} />
                   <YAxis unit="%" tick={{ fontSize: 12 }} domain={[0, 100]} />
-                  <Tooltip 
-                    contentStyle={{ borderRadius: "12px", border: "none", boxShadow: "0 8px 24px rgba(0,0,0,0.15)" }}
-                  />
+                  <Tooltip contentStyle={{ borderRadius: "12px", border: "none", boxShadow: "0 8px 24px rgba(0,0,0,0.15)" }} />
                   <Legend />
-                  <Line 
-                    type="monotone" 
-                    dataKey="baseline" 
-                    name="Original Baseline Target (%)" 
-                    stroke="#a8acb3" 
-                    strokeDasharray="5 5" 
-                    strokeWidth={2} 
-                    dot={{ r: 4 }}
-                  />
-                  <Line 
-                    type="monotone" 
-                    dataKey="actual" 
-                    name="Actual Recorded Progress (%)" 
-                    stroke="#0052ff" 
-                    strokeWidth={3} 
-                    dot={{ r: 6 }}
-                  />
-                  <Line 
-                    type="monotone" 
-                    dataKey="aiForecast" 
-                    name="AI Predicted Forecast Curve (%)" 
-                    stroke="#cf202f" 
-                    strokeWidth={3} 
-                    strokeDasharray="3 3"
-                    dot={{ r: 5 }}
-                  />
+                  <Line type="monotone" dataKey="baseline" name="Original Baseline Target (%)" stroke="#a8acb3" strokeDasharray="5 5" strokeWidth={2} dot={{ r: 4 }} />
+                  <Line type="monotone" dataKey="actual" name="Actual Recorded Progress (%)" stroke="#0052ff" strokeWidth={3} dot={{ r: 6 }} />
+                  <Line type="monotone" dataKey="aiForecast" name="AI Predicted Forecast Curve (%)" stroke="#cf202f" strokeWidth={3} strokeDasharray="3 3" dot={{ r: 5 }} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
           </div>
 
-          {/* Milestone Risk Status Table */}
           <div className="card-coinbase">
             <h3 className="display-md" style={{ fontSize: "20px", fontWeight: "600", marginBottom: "6px" }}>
               Milestone Risk Status
@@ -316,7 +393,7 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
                     <tr key={idx} style={{ borderBottom: "1px solid var(--colors-hairline-soft)" }}>
                       <td style={{ padding: "14px 12px", fontWeight: "600" }}>{m.name}</td>
                       <td className="num-mono" style={{ padding: "14px 12px" }}>{m.target}</td>
-                      <td className="num-mono" style={{ padding: "14px 12px", color: m.delay !== "0 M" ? "var(--colors-semantic-down)" : "var(--colors-semantic-up)" }}>
+                      <td className="num-mono" style={{ padding: "14px 12px", color: m.delay !== "0 Days" ? "var(--colors-semantic-down)" : "var(--colors-semantic-up)" }}>
                         {m.delay}
                       </td>
                       <td style={{ padding: "14px 12px" }}>
@@ -332,43 +409,29 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
               </table>
             </div>
           </div>
-
         </div>
       )}
 
-      {/* Tab B Content: Driver Analysis & Explainable AI (SHAP Module) */}
+      {/* Tab B Content */}
       {activeTab === "TabB" && (
         <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
-          
           <div className="card-coinbase">
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
-              <div>
-                <h3 className="display-md" style={{ fontSize: "20px", fontWeight: "600" }}>
-                  Feature Impact Bar / Waterfall Chart (SHAP Module)
-                </h3>
-                <p style={{ fontSize: "13px", color: "var(--colors-body)", marginTop: "2px" }}>
-                  Top risk contribution factors identified by the AI model for this project
-                </p>
-              </div>
-              <span className="badge-pill badge-red">
-                Explainable AI (XAI) Active
-              </span>
-            </div>
+            <h3 className="display-md" style={{ fontSize: "20px", fontWeight: "600", marginBottom: "6px" }}>
+              Feature Impact Bar Chart (SHAP Module)
+            </h3>
+            <p style={{ fontSize: "13px", color: "var(--colors-body)", marginBottom: "20px" }}>
+              Top risk contribution factors identified by AI for this project
+            </p>
 
-            <div style={{ height: "280px", width: "100%", marginTop: "12px" }}>
+            <div style={{ height: "280px", width: "100%" }}>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={project.shapDrivers} layout="vertical" margin={{ top: 10, right: 30, left: 100, bottom: 0 }}>
                   <XAxis type="number" unit="%" tick={{ fontSize: 12 }} />
                   <YAxis type="category" dataKey="factor" tick={{ fontSize: 11 }} width={220} />
-                  <Tooltip 
-                    contentStyle={{ borderRadius: "12px", border: "none", boxShadow: "0 8px 24px rgba(0,0,0,0.15)" }}
-                  />
+                  <Tooltip contentStyle={{ borderRadius: "12px", border: "none", boxShadow: "0 8px 24px rgba(0,0,0,0.15)" }} />
                   <Bar dataKey="impactPct" name="Risk Contribution (%)" radius={[0, 8, 8, 0]}>
                     {project.shapDrivers.map((entry, index) => (
-                      <Cell 
-                        key={`cell-${index}`} 
-                        fill={index === 0 ? "#cf202f" : index === 1 ? "#d97706" : "#0052ff"} 
-                      />
+                      <Cell key={`cell-${index}`} fill={index === 0 ? "#cf202f" : index === 1 ? "#d97706" : "#0052ff"} />
                     ))}
                   </Bar>
                 </BarChart>
@@ -376,7 +439,6 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
             </div>
           </div>
 
-          {/* CUF vs Non-CUF Impact Indicator */}
           <div style={{
             backgroundColor: "var(--colors-surface-dark)",
             color: "var(--colors-on-dark)",
@@ -384,56 +446,34 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
             padding: "32px",
             boxShadow: "var(--shadow-dark)"
           }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <Sparkles size={20} color="var(--colors-primary)" />
-                <h4 style={{ fontSize: "18px", fontWeight: "600" }}>
-                  CUF vs Non-CUF Impact Indicator (External Macro Variables)
-                </h4>
-              </div>
-              <span className="badge-pill" style={{ backgroundColor: "rgba(0, 82, 255, 0.2)", color: "#60a5fa" }}>
-                {project.cufIndicator.accuracyBoost}
-              </span>
-            </div>
-
-            <p style={{ fontSize: "14px", color: "var(--colors-on-dark-soft)", marginBottom: "20px" }}>
-              External environmental and commodity indicators (Monsoon rainfall indices, steel price inflation, tribunal stay orders) 
-              integrated into the prediction pipeline to maximize model fidelity.
-            </p>
-
+            <h4 style={{ fontSize: "18px", fontWeight: "600", marginBottom: "12px" }}>
+              CUF vs Non-CUF External Variables Impact
+            </h4>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "16px" }}>
               {project.cufIndicator.externalFactors.map((ef, idx) => (
-                <div 
-                  key={idx}
-                  style={{
-                    backgroundColor: "var(--colors-surface-dark-elevated)",
-                    borderRadius: "var(--rounded-md)",
-                    padding: "16px",
-                    borderLeft: "4px solid var(--colors-primary)"
-                  }}
-                >
-                  <div style={{ fontWeight: "600", fontSize: "14px", color: "#ffffff", marginBottom: "4px" }}>
-                    {ef.name}
-                  </div>
-                  <div style={{ fontSize: "13px", color: "var(--colors-on-dark-soft)" }}>
-                    {ef.impact}
-                  </div>
+                <div key={idx} style={{
+                  backgroundColor: "var(--colors-surface-dark-elevated)",
+                  borderRadius: "var(--rounded-md)",
+                  padding: "16px",
+                  borderLeft: "4px solid var(--colors-primary)"
+                }}>
+                  <div style={{ fontWeight: "600", fontSize: "14px", color: "#ffffff" }}>{ef.name}</div>
+                  <div style={{ fontSize: "13px", color: "var(--colors-on-dark-soft)", marginTop: "4px" }}>{ef.impact}</div>
                 </div>
               ))}
             </div>
           </div>
-
         </div>
       )}
 
-      {/* Tab C Content: Benchmarking & Peer Analytics */}
+      {/* Tab C Content */}
       {activeTab === "TabC" && (
         <div className="card-coinbase">
           <h3 className="display-md" style={{ fontSize: "20px", fontWeight: "600", marginBottom: "6px" }}>
             Peer Project Comparison Table
           </h3>
           <p style={{ fontSize: "13px", color: "var(--colors-body)", marginBottom: "20px" }}>
-            Comparative analytics against 3 peer projects in the same sector & budget range
+            Comparative analytics against peer projects in the same sector
           </p>
 
           <div style={{ overflowX: "auto" }}>
@@ -449,37 +489,22 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
                 </tr>
               </thead>
               <tbody>
-                {/* Active Project Highlight Row */}
                 <tr style={{ backgroundColor: "rgba(0, 82, 255, 0.05)", borderBottom: "2px solid var(--colors-primary)" }}>
-                  <td style={{ padding: "16px 12px", fontWeight: "700" }}>
-                    ⭐ {project.id} - {project.name} (THIS PROJECT)
-                  </td>
+                  <td style={{ padding: "16px 12px", fontWeight: "700" }}>⭐ {project.id} - {project.name} (THIS PROJECT)</td>
                   <td className="num-mono" style={{ padding: "16px 12px", fontWeight: "700" }}>₹{project.originalCost} Cr</td>
                   <td className="num-mono" style={{ padding: "16px 12px", fontWeight: "700" }}>{project.physicalProgress}%</td>
-                  <td className="num-mono" style={{ padding: "16px 12px", fontWeight: "700", color: "var(--colors-semantic-down)" }}>+{project.delayMonths} M</td>
+                  <td className="num-mono" style={{ padding: "16px 12px", fontWeight: "700", color: "var(--colors-semantic-down)" }}>+{project.delayDays} Days</td>
                   <td className="num-mono" style={{ padding: "16px 12px", fontWeight: "700", color: "var(--colors-semantic-down)" }}>+{project.costEscalationPct}%</td>
-                  <td style={{ padding: "16px 12px" }}>
-                    <span className={`badge-pill ${badgeClass}`}>{project.riskBand}</span>
-                  </td>
+                  <td style={{ padding: "16px 12px" }}><span className={`badge-pill ${badgeClass}`}>{project.riskBand}</span></td>
                 </tr>
-
-                {/* Peer rows */}
                 {project.peers.map((peer) => (
                   <tr key={peer.id} style={{ borderBottom: "1px solid var(--colors-hairline-soft)" }}>
-                    <td style={{ padding: "14px 12px", fontWeight: "600", color: "var(--colors-ink)" }}>
-                      {peer.id} - {peer.name}
-                    </td>
+                    <td style={{ padding: "14px 12px", fontWeight: "600" }}>{peer.id} - {peer.name}</td>
                     <td className="num-mono" style={{ padding: "14px 12px" }}>₹{peer.budget.toLocaleString()} Cr</td>
                     <td className="num-mono" style={{ padding: "14px 12px" }}>{peer.progress}%</td>
                     <td className="num-mono" style={{ padding: "14px 12px" }}>+{peer.delayMonths} M</td>
                     <td className="num-mono" style={{ padding: "14px 12px" }}>+{peer.costEscPct}%</td>
-                    <td style={{ padding: "14px 12px" }}>
-                      <span className={`badge-pill ${
-                        peer.risk === 'High' ? 'badge-red' : peer.risk === 'Medium' ? 'badge-yellow' : 'badge-green'
-                      }`}>
-                        {peer.risk}
-                      </span>
-                    </td>
+                    <td style={{ padding: "14px 12px" }}><span className={`badge-pill ${peer.risk === 'High' || peer.risk === 'Red' ? 'badge-red' : 'badge-green'}`}>{peer.risk}</span></td>
                   </tr>
                 ))}
               </tbody>
@@ -488,14 +513,28 @@ export default function ProjectDetailView({ project, onBack, onOpenAI }) {
         </div>
       )}
 
-      {/* Floating prompt button inside detail view */}
-      <div style={{ marginTop: "40px", textAlign: "center" }}>
+      {/* Manual Telegram Alert Button */}
+      <div style={{ marginTop: "40px", textAlign: "center", display: "flex", justifyContent: "center", gap: "16px" }}>
+        <button 
+          onClick={handleManualTelegramDispatch}
+          disabled={telegramStatus === "sending"}
+          className="btn-pill-primary"
+          style={{
+            backgroundColor: "#0088cc",
+            padding: "14px 32px",
+            fontSize: "15px",
+            boxShadow: "0 8px 24px rgba(0, 136, 204, 0.35)"
+          }}
+        >
+          <Send size={18} /> Send Telegram Alert to ID {TELEGRAM_CONFIG.chatId}
+        </button>
+
         <button 
           onClick={onOpenAI}
-          className="btn-pill-primary"
-          style={{ padding: "14px 32px", fontSize: "16px", boxShadow: "0 8px 24px rgba(0, 82, 255, 0.3)" }}
+          className="btn-pill-secondary"
+          style={{ padding: "14px 28px", fontSize: "15px" }}
         >
-          <Sparkles size={18} /> Ask PAIMANA AI about {project.id}
+          <Sparkles size={18} /> Ask PAIMANA AI
         </button>
       </div>
 

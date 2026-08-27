@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { 
   Building2, TrendingUp, AlertTriangle, Clock, Filter, 
-  MapPin, PieChart as PieIcon, ArrowUpRight, ChevronRight, ShieldAlert, Layers 
+  MapPin, PieChart as PieIcon, ArrowUpRight, ChevronRight, ShieldAlert, Layers, Send, Check
 } from "lucide-react";
 import { 
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, 
@@ -11,6 +11,7 @@ import {
   PORTFOLIO_KPIS, SECTORS, MINISTRIES, RISK_LEVELS, 
   COST_RANGES, STATE_RISK_HEATMAP, SECTORAL_RISK_DISTRIBUTION 
 } from "../data/projectData";
+import { sendTelegramAlert, sendHighRiskSummaryAlert, TELEGRAM_CONFIG } from "../services/telegramService";
 
 export default function HomeDashboard({ 
   projects, 
@@ -24,6 +25,9 @@ export default function HomeDashboard({
   setSelectedCostRange,
   onSelectProject 
 }) {
+  const [telegramSendingId, setTelegramSendingId] = useState(null);
+  const [telegramToast, setTelegramToast] = useState(null);
+
   // Sector distribution data formatted for Recharts
   const barChartData = SECTORAL_RISK_DISTRIBUTION.map((item) => ({
     name: item.sector.replace(" & Natural Gas", "").replace(" & High", ""),
@@ -46,14 +50,60 @@ export default function HomeDashboard({
 
   // Pie chart data for risk breakdown
   const pieData = [
-    { name: "High Risk (Red)", value: 248, color: "#cf202f" },
-    { name: "Medium Risk (Amber)", value: 612, color: "#d97706" },
-    { name: "Low Risk (Green)", value: 1121, color: "#05b169" },
+    { name: "High Risk (Red)", value: projects.filter(p => p.riskBand === 'Red').length, color: "#cf202f" },
+    { name: "Medium Risk (Amber)", value: projects.filter(p => p.riskBand === 'Yellow').length, color: "#d97706" },
+    { name: "Low Risk (Green)", value: projects.filter(p => p.riskBand === 'Green').length, color: "#05b169" },
   ];
+
+  const handleSendTelegramForProject = async (e, project) => {
+    e.stopPropagation();
+    setTelegramSendingId(project.id);
+    const result = await sendTelegramAlert(project, "Home Dashboard Action Button");
+    setTelegramSendingId(null);
+    if (result.success) {
+      setTelegramToast(`✅ Telegram Alert sent for ${project.id} to Chat ID ${TELEGRAM_CONFIG.chatId}!`);
+      setTimeout(() => setTelegramToast(null), 4000);
+    } else {
+      setTelegramToast(`❌ Telegram Alert failed: ${result.error}`);
+      setTimeout(() => setTelegramToast(null), 4000);
+    }
+  };
+
+  const handleSendSummaryTelegram = async () => {
+    setTelegramSendingId("SUMMARY");
+    const result = await sendHighRiskSummaryAlert(projects);
+    setTelegramSendingId(null);
+    if (result.ok) {
+      setTelegramToast(`✅ High-Risk Summary Alert sent to Telegram Chat ID ${TELEGRAM_CONFIG.chatId}!`);
+      setTimeout(() => setTelegramToast(null), 4000);
+    } else {
+      setTelegramToast(`❌ Telegram Summary Alert failed.`);
+      setTimeout(() => setTelegramToast(null), 4000);
+    }
+  };
 
   return (
     <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "32px 24px 64px 24px" }}>
       
+      {/* Toast Notification Banner */}
+      {telegramToast && (
+        <div style={{
+          backgroundColor: "#0088cc",
+          color: "white",
+          borderRadius: "var(--rounded-lg)",
+          padding: "14px 24px",
+          marginBottom: "24px",
+          fontSize: "14px",
+          fontWeight: "600",
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+          boxShadow: "0 8px 24px rgba(0, 136, 204, 0.4)"
+        }}>
+          <Send size={18} /> {telegramToast}
+        </div>
+      )}
+
       {/* Dark Editorial Hero Band matching Coinbase System */}
       <div style={{
         backgroundColor: "var(--colors-surface-dark)",
@@ -65,7 +115,6 @@ export default function HomeDashboard({
         position: "relative",
         overflow: "hidden"
       }}>
-        {/* Subtle decorative glow */}
         <div style={{
           position: "absolute",
           top: "-50px",
@@ -77,22 +126,44 @@ export default function HomeDashboard({
           pointerEvents: "none"
         }} />
 
-        <div style={{ position: "relative", zIndex: 2 }}>
-          <div className="badge-pill badge-red" style={{ marginBottom: "16px", textTransform: "uppercase" }}>
-            <ShieldAlert size={14} /> MoSPI Executive Risk Watch
+        <div style={{ position: "relative", zIndex: 2, display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: "20px" }}>
+          <div>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
+              <span className="badge-pill badge-red" style={{ textTransform: "uppercase" }}>
+                <ShieldAlert size={14} /> MoSPI Executive Risk Watch
+              </span>
+              <span className="badge-pill" style={{ backgroundColor: "rgba(0, 136, 204, 0.2)", color: "#38bdf8", border: "1px solid rgba(0, 136, 204, 0.4)" }}>
+                <Send size={12} /> Telegram Attached: Chat ID {TELEGRAM_CONFIG.chatId}
+              </span>
+            </div>
+
+            <h1 className="display-hero" style={{ marginBottom: "12px", color: "#ffffff" }}>
+              Infrastructure Early Warning System
+            </h1>
+            <p style={{ 
+              fontSize: "16px", 
+              color: "var(--colors-on-dark-soft)", 
+              maxWidth: "760px",
+              lineHeight: 1.6
+            }}>
+              Real-time machine learning portfolio intelligence monitoring 20 central infrastructure projects. 
+              Automated high-risk alerts (&ge;85 score) are instantly dispatched to Telegram Chat ID <strong>{TELEGRAM_CONFIG.chatId}</strong>.
+            </p>
           </div>
-          <h1 className="display-hero" style={{ marginBottom: "12px", color: "#ffffff" }}>
-            Infrastructure Early Warning System
-          </h1>
-          <p style={{ 
-            fontSize: "17px", 
-            color: "var(--colors-on-dark-soft)", 
-            maxWidth: "760px",
-            lineHeight: 1.6
-          }}>
-            Real-time machine learning portfolio intelligence monitoring 1,981 central infrastructure projects across India. 
-            Detect cost escalation, timeline slip, and critical regulatory bottlenecks before budget exhaustion.
-          </p>
+
+          <button
+            onClick={handleSendSummaryTelegram}
+            disabled={telegramSendingId === "SUMMARY"}
+            className="btn-pill-primary"
+            style={{
+              backgroundColor: "#0088cc",
+              padding: "12px 24px",
+              fontSize: "14px",
+              boxShadow: "0 6px 20px rgba(0, 136, 204, 0.4)"
+            }}
+          >
+            <Send size={16} /> {telegramSendingId === "SUMMARY" ? "Sending Telegram..." : `Dispatch Telegram Summary (${TELEGRAM_CONFIG.chatId})`}
+          </button>
         </div>
       </div>
 
@@ -118,7 +189,7 @@ export default function HomeDashboard({
             </div>
           </div>
           <div className="num-mono" style={{ fontSize: "36px", fontWeight: "700", color: "var(--colors-ink)" }}>
-            {PORTFOLIO_KPIS.totalProjects.toLocaleString()}
+            {PORTFOLIO_KPIS.totalProjects}
           </div>
           <div style={{ fontSize: "13px", color: "var(--colors-body)", marginTop: "6px" }}>
             Across 14 Central Ministries
@@ -139,11 +210,11 @@ export default function HomeDashboard({
               <TrendingUp size={18} color="var(--colors-semantic-down)" />
             </div>
           </div>
-          <div className="num-mono" style={{ fontSize: "28px", fontWeight: "700", color: "var(--colors-ink)" }}>
+          <div className="num-mono" style={{ fontSize: "26px", fontWeight: "700", color: "var(--colors-ink)" }}>
             ₹{PORTFOLIO_KPIS.originalCostLakhCr}L Cr → ₹{PORTFOLIO_KPIS.revisedCostLakhCr}L Cr
           </div>
           <div style={{ fontSize: "13px", color: "var(--colors-semantic-down)", fontWeight: "600", marginTop: "6px" }}>
-            +{PORTFOLIO_KPIS.costEscalationPct}% Cost Overrun (+₹5.65 Lakh Cr)
+            +{PORTFOLIO_KPIS.costEscalationPct}% Cost Overrun
           </div>
         </div>
 
@@ -165,7 +236,7 @@ export default function HomeDashboard({
             {PORTFOLIO_KPIS.highRiskCount}
           </div>
           <div style={{ fontSize: "13px", color: "var(--colors-body)", marginTop: "6px" }}>
-            Red Flags Alert (Cost/Delay &gt; 30%)
+            Auto Telegram Alert (&ge; 85 Score)
           </div>
         </div>
 
@@ -209,7 +280,6 @@ export default function HomeDashboard({
           Filters:
         </div>
 
-        {/* Sector Filter */}
         <select
           value={selectedSector}
           onChange={(e) => setSelectedSector(e.target.value)}
@@ -227,7 +297,6 @@ export default function HomeDashboard({
           {SECTORS.map((s) => <option key={s} value={s}>{s}</option>)}
         </select>
 
-        {/* Ministry Filter */}
         <select
           value={selectedMinistry}
           onChange={(e) => setSelectedMinistry(e.target.value)}
@@ -245,7 +314,6 @@ export default function HomeDashboard({
           {MINISTRIES.map((m) => <option key={m} value={m}>{m}</option>)}
         </select>
 
-        {/* Risk Filter */}
         <select
           value={selectedRisk}
           onChange={(e) => setSelectedRisk(e.target.value)}
@@ -263,7 +331,6 @@ export default function HomeDashboard({
           {RISK_LEVELS.map((r) => <option key={r} value={r}>{r}</option>)}
         </select>
 
-        {/* Cost Filter */}
         <select
           value={selectedCostRange}
           onChange={(e) => setSelectedCostRange(e.target.value)}
@@ -281,7 +348,6 @@ export default function HomeDashboard({
           {COST_RANGES.map((c) => <option key={c} value={c}>{c}</option>)}
         </select>
 
-        {/* Reset Filters button */}
         {(selectedSector !== "All Sectors" || selectedMinistry !== "All Ministries" || selectedRisk !== "All Risks" || selectedCostRange !== "All Budget Ranges") && (
           <button
             onClick={() => {
@@ -320,7 +386,6 @@ export default function HomeDashboard({
             <MapPin size={20} color="var(--colors-primary)" />
           </div>
 
-          {/* India State Risk Cards Grid */}
           <div style={{ 
             display: "grid", 
             gridTemplateColumns: "repeat(2, 1fr)", 
@@ -354,15 +419,12 @@ export default function HomeDashboard({
             ))}
           </div>
 
-          {/* Sectoral Breakdown Bar Chart */}
           <div style={{ height: "200px", marginTop: "12px" }}>
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={barChartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                 <XAxis dataKey="name" tick={{ fontSize: 11 }} />
                 <YAxis tick={{ fontSize: 11 }} />
-                <Tooltip 
-                  contentStyle={{ borderRadius: "12px", border: "none", boxShadow: "0 8px 24px rgba(0,0,0,0.15)" }} 
-                />
+                <Tooltip contentStyle={{ borderRadius: "12px", border: "none", boxShadow: "0 8px 24px rgba(0,0,0,0.15)" }} />
                 <Bar dataKey="High Risk" fill="#cf202f" radius={[4, 4, 0, 0]} />
                 <Bar dataKey="Medium Risk" fill="#d97706" radius={[4, 4, 0, 0]} />
                 <Bar dataKey="Low Risk" fill="#05b169" radius={[4, 4, 0, 0]} />
@@ -389,13 +451,7 @@ export default function HomeDashboard({
             <div style={{ width: "160px", height: "160px" }}>
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie
-                    data={pieData}
-                    innerRadius={45}
-                    outerRadius={75}
-                    paddingAngle={4}
-                    dataKey="value"
-                  >
+                  <Pie data={pieData} innerRadius={45} outerRadius={75} paddingAngle={4} dataKey="value">
                     {pieData.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
@@ -418,7 +474,6 @@ export default function HomeDashboard({
             </div>
           </div>
 
-          {/* Scatter Chart for Cost Escalation vs Original Budget */}
           <div style={{ height: "180px", marginTop: "12px" }}>
             <ResponsiveContainer width="100%" height="100%">
               <ScatterChart margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
@@ -461,7 +516,7 @@ export default function HomeDashboard({
               Critical Projects Alert Table (RAG Flagged)
             </h3>
             <p style={{ fontSize: "14px", color: "var(--colors-body)", marginTop: "4px" }}>
-              Showing {projects.length} evaluated central infrastructure projects
+              Showing {projects.length} evaluated central infrastructure projects · Connected to Telegram Chat ID {TELEGRAM_CONFIG.chatId}
             </p>
           </div>
           <span className="badge-pill badge-red">
@@ -469,7 +524,6 @@ export default function HomeDashboard({
           </span>
         </div>
 
-        {/* Table */}
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", fontSize: "14px" }}>
             <thead>
@@ -487,7 +541,7 @@ export default function HomeDashboard({
                 <th style={{ padding: "14px 16px" }}>Predicted Final Cost</th>
                 <th style={{ padding: "14px 16px" }}>Risk Score</th>
                 <th style={{ padding: "14px 16px" }}>Status Flag</th>
-                <th style={{ padding: "14px 16px", textAlign: "right" }}>Action</th>
+                <th style={{ padding: "14px 16px", textAlign: "right" }}>Telegram & Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -500,6 +554,8 @@ export default function HomeDashboard({
               ) : (
                 projects.map((p) => {
                   const badgeClass = p.riskBand === "Red" ? "badge-red" : p.riskBand === "Yellow" ? "badge-yellow" : "badge-green";
+                  const isSendingThis = telegramSendingId === p.id;
+
                   return (
                     <tr 
                       key={p.id}
@@ -535,7 +591,7 @@ export default function HomeDashboard({
                       </td>
                       <td style={{ padding: "16px" }}>
                         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                          <span className="num-mono" style={{ fontWeight: "700", fontSize: "16px" }}>
+                          <span className="num-mono" style={{ fontWeight: "700", fontSize: "16px", color: p.riskScore >= 85 ? '#cf202f' : 'inherit' }}>
                             {p.riskScore}/100
                           </span>
                         </div>
@@ -546,16 +602,28 @@ export default function HomeDashboard({
                         </span>
                       </td>
                       <td style={{ padding: "16px", textAlign: "right" }}>
-                        <button 
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            onSelectProject(p.id);
-                          }}
-                          className="btn-pill-primary"
-                          style={{ padding: "6px 16px", fontSize: "12px" }}
-                        >
-                          View Details <ChevronRight size={14} />
-                        </button>
+                        <div style={{ display: "inline-flex", gap: "8px" }}>
+                          <button
+                            onClick={(e) => handleSendTelegramForProject(e, p)}
+                            disabled={isSendingThis}
+                            title={`Send Telegram Alert to ${TELEGRAM_CONFIG.chatId}`}
+                            className="btn-pill-secondary"
+                            style={{ padding: "6px 12px", fontSize: "12px", color: "#0088cc", borderColor: "rgba(0, 136, 204, 0.3)" }}
+                          >
+                            <Send size={13} /> {isSendingThis ? "Sending..." : "Telegram Alert"}
+                          </button>
+
+                          <button 
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onSelectProject(p.id);
+                            }}
+                            className="btn-pill-primary"
+                            style={{ padding: "6px 16px", fontSize: "12px" }}
+                          >
+                            View Details <ChevronRight size={14} />
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   );
