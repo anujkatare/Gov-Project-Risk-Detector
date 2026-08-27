@@ -1,0 +1,234 @@
+:root {
+  /* Coinbase Design System Color Tokens */
+  --colors-primary: #0052ff;
+  --colors-primary-active: #003ecc;
+  --colors-primary-disabled: #a8b8cc;
+  --colors-accent-yellow: #f4b000;
+
+  --colors-canvas: #ffffff;
+  --colors-surface-soft: #f7f7f7;
+  --colors-surface-strong: #eef0f3;
+  --colors-surface-dark: #0a0b0d;
+  --colors-surface-dark-elevated: #16181c;
+
+  --colors-hairline: #dee1e6;
+  --colors-hairline-soft: #eef0f3;
+
+  --colors-ink: #0a0b0d;
+  --colors-body: #5b616e;
+  --colors-body-strong: #0a0b0d;
+  --colors-muted: #7c828a;
+  --colors-muted-soft: #a8acb3;
+  --colors-on-primary: #ffffff;
+  --colors-on-dark: #ffffff;
+  --colors-on-dark-soft: #a8acb3;
+
+  --colors-semantic-up: #05b169;
+  --colors-semantic-down: #cf202f;
+  --colors-semantic-yellow: #d97706;
+
+  /* Typography Stack */
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Radius Scale */
+  --rounded-xs: 4px;
+  --rounded-sm: 8px;
+  --rounded-md: 12px;
+  --rounded-lg: 16px;
+  --rounded-xl: 24px;
+  --rounded-pill: 100px;
+  --rounded-full: 9999px;
+
+  /* Spacing */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-base: 16px;
+  --spacing-md: 20px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-section: 96px;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --shadow-dark: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--colors-canvas);
+  color: var(--colors-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Number display styling */
+.num-mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Display headlines */
+.display-hero {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.display-lg {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.display-md {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* Pill Buttons */
+.btn-pill-primary {
+  background-color: var(--colors-primary);
+  color: var(--colors-on-primary);
+  border: none;
+  border-radius: var(--rounded-pill);
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-pill-primary:hover {
+  background-color: var(--colors-primary-active);
+  transform: translateY(-1px);
+}
+
+.btn-pill-secondary {
+  background-color: var(--colors-surface-strong);
+  color: var(--colors-ink);
+  border: 1px solid var(--colors-hairline);
+  border-radius: var(--rounded-pill);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-pill-secondary:hover {
+  background-color: var(--colors-hairline);
+  color: var(--colors-ink);
+}
+
+.btn-pill-dark {
+  background-color: var(--colors-surface-dark-elevated);
+  color: var(--colors-on-dark);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--rounded-pill);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-pill-dark:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Badges */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: var(--rounded-pill);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-red {
+  background-color: rgba(207, 32, 47, 0.1);
+  color: var(--colors-semantic-down);
+  border: 1px solid rgba(207, 32, 47, 0.2);
+}
+
+.badge-yellow {
+  background-color: rgba(217, 119, 6, 0.1);
+  color: var(--colors-semantic-yellow);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.badge-green {
+  background-color: rgba(5, 177, 105, 0.1);
+  color: var(--colors-semantic-up);
+  border: 1px solid rgba(5, 177, 105, 0.2);
+}
+
+/* Elevated Cards */
+.card-coinbase {
+  background: var(--colors-canvas);
+  border: 1px solid var(--colors-hairline);
+  border-radius: var(--rounded-xl);
+  padding: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-coinbase:hover {
+  box-shadow: var(--shadow-card);
+}
+
+.card-coinbase-dark {
+  background: var(--colors-surface-dark-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--rounded-xl);
+  padding: 28px;
+  color: var(--colors-on-dark);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--colors-surface-soft);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--colors-muted-soft);
+  border-radius: 4px;
+}
