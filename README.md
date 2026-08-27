@@ -274,17 +274,6 @@ The table below shows indicative outputs from the scoring engine on representati
 
 ---
 
-## 🖼️ Dashboard Previews
-
-| Project Risk Dashboard | Model Performance |
-|---|---|
-| ![Project Risk Dashboard](assets/project_risk_dashboard.png) | ![Model Performance](assets/model_performance_dashboard.png) |
-
-| Feature Driver Analysis | Executive Summary |
-|---|---|
-| ![Feature Drivers](assets/feature_driver_dashboard.png) | ![Executive Dashboard](assets/executive_model_dashboard.png) |
-
----
 
 ## 🏛️ Methodology & Documentation
 
