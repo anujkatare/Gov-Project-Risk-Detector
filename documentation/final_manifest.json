@@ -1,0 +1,412 @@
+{
+  "project": "Predictive Construction Project Overrun Model",
+  "project_code": "IP-DA-003",
+  "status": "Complete",
+  "file_count": 101,
+  "files": {
+    "README.md": {
+      "size_bytes": 1832,
+      "sha256": "fa15dc168f4fd013aeb891ab95982418e25ecb94bd53285cf0397a500de317a3"
+    },
+    "START_HERE.md": {
+      "size_bytes": 849,
+      "sha256": "3f6d56e7e97b43c61762c5a03c938b95dffa235b6fb6fbe95f8d6ccdfba2f2ae"
+    },
+    "act/README.md": {
+      "size_bytes": 242,
+      "sha256": "6043c9c4033f1c0bd3d800d7600cd2d29b9aa23851811057065c3aff0f3a5bdd"
+    },
+    "act/predictive_overrun_model_act_plan.xlsx": {
+      "size_bytes": 35087,
+      "sha256": "9a66b4747fef53cdaba35ebe7856ab638b3a5e9d931977be56e5385133d01886"
+    },
+    "analysis/README.md": {
+      "size_bytes": 299,
+      "sha256": "f8b19f52bbad3b957d3216e2ca363c82bf6eea7d6b702aaa0a13494f94ff6011"
+    },
+    "analysis/excel/predictive_overrun_model_analysis.xlsx": {
+      "size_bytes": 31802,
+      "sha256": "fa62e586fb6adc286910615f380c4da3513b6444018374b564f13ab3e5d2a4a0"
+    },
+    "analysis/models/cost_overrun_flag_champion.joblib": {
+      "size_bytes": 2422530,
+      "sha256": "9e34ff29632f44e79a08f13536b12e7d136090c432ea390500c44a3eeaf7d185"
+    },
+    "analysis/models/final_cost_overrun_pct_champion.joblib": {
+      "size_bytes": 3654298,
+      "sha256": "04b09afba0cddeff4ce796bd6a1d186a49adac4415c62066ed85d40282e31018"
+    },
+    "analysis/models/final_schedule_delay_days_champion.joblib": {
+      "size_bytes": 9225,
+      "sha256": "bda03cc10fc8710276ee76762772586fae4b0618c66fe7fab594f24242eb3e71"
+    },
+    "analysis/models/model_manifest.json": {
+      "size_bytes": 1884,
+      "sha256": "f82256c9565d85f0e6fa20112640e06f376f13e8f360d3125862d99c21fe4f89"
+    },
+    "analysis/models/schedule_delay_flag_champion.joblib": {
+      "size_bytes": 9553,
+      "sha256": "b12c3e98469874e8c6eb794f2e21b2dd12f3216e0ad0ab424d116102794dcb6f"
+    },
+    "analysis/requirements-analysis.txt": {
+      "size_bytes": 53,
+      "sha256": "ab9c7d3ebf7681058b040ca54bb4ccbc4b8e0c77bf37fb343fc0a61dfcc222a2"
+    },
+    "analysis/run_modeling.py": {
+      "size_bytes": 17911,
+      "sha256": "f5e45f798602cac29b692491fa5caf6d0d4c8d7d95ca287f6712c8ee8a0089c4"
+    },
+    "analysis/scoring/sample_new_projects.csv": {
+      "size_bytes": 8446,
+      "sha256": "5b7b3d65aee34be6aa165884de099cb647813053e957c33f5ba59bedee7092f4"
+    },
+    "analysis/tables/calibration_results.csv": {
+      "size_bytes": 1316,
+      "sha256": "a1e04efda8cdff3bfebef060266a7b69be458ea24b824ca6d7de87473759bb49"
+    },
+    "analysis/tables/classification_model_metrics.csv": {
+      "size_bytes": 1852,
+      "sha256": "ffcd6b45546689bca9ba2fc0319fa9147bea3d5843fe7ce553fdcd336232957a"
+    },
+    "analysis/tables/confusion_matrix.csv": {
+      "size_bytes": 362,
+      "sha256": "617c5ed0f05f0ec8dd19098c0e078a39f4213ddb54b72fcd1f8cb470e989aecc"
+    },
+    "analysis/tables/cost_overrun_flag_feature_importance.csv": {
+      "size_bytes": 3410,
+      "sha256": "448632c2786db42533a9d6e7e0b14e8d13bd6d425ac0ec4edd5c0104e305859d"
+    },
+    "analysis/tables/regression_model_metrics.csv": {
+      "size_bytes": 927,
+      "sha256": "40fa11092834be695da26b453128a2f53b280dd1a5bec845f237ba98e3756067"
+    },
+    "analysis/tables/schedule_delay_flag_feature_importance.csv": {
+      "size_bytes": 3462,
+      "sha256": "3add211c701828e983a64921f5a67251526b6a0356e6d05ef4ef993de18ea7e3"
+    },
+    "analysis/tables/segment_model_performance.csv": {
+      "size_bytes": 6651,
+      "sha256": "31ad1e788a1a6b512cdfee74f45b58273d8d8bff84f7fe09f5edecb34c702a13"
+    },
+    "analysis/tables/test_project_predictions.csv": {
+      "size_bytes": 132883,
+      "sha256": "d4a25bef32930eb6e960c3c894d965ebb269227fcd16bc7a782c431d347206da"
+    },
+    "analysis/tables/top_30_predicted_risk_projects.csv": {
+      "size_bytes": 10032,
+      "sha256": "41f235d421247dffba515bf5aab04c357ead739a9542607aef698e2f7f2a6388"
+    },
+    "automation/README.md": {
+      "size_bytes": 763,
+      "sha256": "9db71c1c4d4a40d2df1a252f0cd543962dd760712b95c20c1e637d8b9629fdb6"
+    },
+    "automation/monitor_model.py": {
+      "size_bytes": 2207,
+      "sha256": "fb946deb58c67755ceb01d7326b1228e84ea50f3888a0076f8577bab6dc011ae"
+    },
+    "automation/output/final_validation_scored_projects.csv": {
+      "size_bytes": 4913,
+      "sha256": "53fdd83eb454eadf1b8f0f6eef84c1f04b5cea41aca4cf0ce27f300301b1d0d1"
+    },
+    "automation/output/model_monitoring_report.json": {
+      "size_bytes": 572,
+      "sha256": "08889b796bb07291e5fd2449dd122c6e3b89357841980e00b9077a828de7bcf3"
+    },
+    "automation/output/monitoring_demo.csv": {
+      "size_bytes": 72782,
+      "sha256": "24c053749d2f4f009615271ce16b670cead27794eb6a575bdb2f20da1d4fb2f8"
+    },
+    "automation/output/reference_scoring_history.csv": {
+      "size_bytes": 131690,
+      "sha256": "135f3da49bc41fe789e9a8b04f6e46b624c80491c6ba5c33feb7d4ccfc09f64d"
+    },
+    "automation/output/sample_scored_projects.csv": {
+      "size_bytes": 4900,
+      "sha256": "d4acb6db154ff515970545389e5c148d142b3e3410195c306c52c9c12c215916"
+    },
+    "automation/run_scoring_pipeline.ps1": {
+      "size_bytes": 367,
+      "sha256": "bb93de9c9388e924515f0296da8a2f16797658b118e05bfb99307c0365401715"
+    },
+    "automation/score_new_projects.py": {
+      "size_bytes": 3660,
+      "sha256": "a0ac21b46523e6fb7d7990d0ebcc8e392d645643cbb90b73c524760c483ee2f7"
+    },
+    "dashboards/README.md": {
+      "size_bytes": 105,
+      "sha256": "776b43736646858dd01fa9a180bfa397a7fa8d5514cc0d5f28aeb01cffd659d5"
+    },
+    "data/cleaned/README.md": {
+      "size_bytes": 133,
+      "sha256": "a017305538698fca19f4947c9e79b8251a79751279ab113a5b66ea791e50b6a1"
+    },
+    "data/cleaned/outcomes_clean.csv": {
+      "size_bytes": 168924,
+      "sha256": "9eed334401b92afa112111d43fb5b6181e47a8f3821961be5a741ea20ec0661f"
+    },
+    "data/cleaned/projects_clean.csv": {
+      "size_bytes": 523676,
+      "sha256": "a08cf17439b5ce018ff27d4870326f9e46d408d35c5a299b545207e54770f81b"
+    },
+    "data/cleaned/workflow_features_clean.csv": {
+      "size_bytes": 290633,
+      "sha256": "3e5a942625737922be0ed89fc26a46290f1a5c24222b8ac34d23c8aba371c002"
+    },
+    "data/generation/generate_synthetic_overrun_data.py": {
+      "size_bytes": 21343,
+      "sha256": "e6237a6cd8fa362c476589da78a1e22c081190c0c17bdb01c82e01f2d87257b0"
+    },
+    "data/processed/README.md": {
+      "size_bytes": 182,
+      "sha256": "9e43c42795cb6f0663c07aa1815137101d61584e8d5493e53a78b2cdabcfbce9"
+    },
+    "data/processed/modeling_dataset_clean.csv": {
+      "size_bytes": 942007,
+      "sha256": "5fe874bfc55e5aad9ce5827c5d56ffb0f7ca14f6d52ac641c1674afeb599bdaf"
+    },
+    "data/processed/predictive_overrun_model.sqlite": {
+      "size_bytes": 2465792,
+      "sha256": "9027d6ccc36f3b563bd440ea6b9d7b88179c2ec73d35acfe038bb7d965d33c8a"
+    },
+    "data/processing/process_clean_and_validate.py": {
+      "size_bytes": 19533,
+      "sha256": "963c46fb600350dd8836404b7ea2eb8501e678edc2db2e3aa463bff24812e580"
+    },
+    "data/raw/README.md": {
+      "size_bytes": 167,
+      "sha256": "448d7178c817eb7bd71c37b8ff9a3304418681a71db3d2bf2d48fcf0f8981035"
+    },
+    "data/raw/outcomes_raw.csv": {
+      "size_bytes": 172790,
+      "sha256": "11507f40adc44ca5e9ec0906ebe7f95d72ea235a1e56437b97ab25e37f5de799"
+    },
+    "data/raw/projects_raw.csv": {
+      "size_bytes": 534758,
+      "sha256": "8a5be82bbd45fa25c711ef5cd72bd24a846ee1d67857e4e78bba8e3a6feac933"
+    },
+    "data/raw/workflow_features_raw.csv": {
+      "size_bytes": 297359,
+      "sha256": "ed13755d08ff25098ef7cf1887b82e1cfbe7ae9b1e5c06b8b946f505012ca92e"
+    },
+    "documentation/01_ask_phase.md": {
+      "size_bytes": 1917,
+      "sha256": "7957d4ccef8fb8b76bcc95380ca19ce055e31d6e0454e9b58c11a854c13885d2"
+    },
+    "documentation/02_methodology_alignment.md": {
+      "size_bytes": 1225,
+      "sha256": "1d326acadbe098a3d8b2524970494127bc5d55ca74ad753ccb4fec1fa9409fb5"
+    },
+    "documentation/03_project_charter.md": {
+      "size_bytes": 1561,
+      "sha256": "d95ef71a66796173c61ce8aa1f0cd0d0d1f9a45811e97bffd9424c0d78183c21"
+    },
+    "documentation/04_ask_phase_gate.md": {
+      "size_bytes": 499,
+      "sha256": "d2888949aaed72de21f4b3be5ff0692ae33dbd92fa84088d9eac11d0bed65206"
+    },
+    "documentation/05_prepare_phase.md": {
+      "size_bytes": 905,
+      "sha256": "bf925361a2561060811149d4264ddcb63dd900836745b8cef37b81c26d1af263"
+    },
+    "documentation/06_dataset_methodology.md": {
+      "size_bytes": 1258,
+      "sha256": "b1941db8783b9db3fbe4f6b21f83d452bc30481122a178ee83956fa1656793e0"
+    },
+    "documentation/07_data_quality_rules.md": {
+      "size_bytes": 999,
+      "sha256": "96ed8f178c2bfcdb28eae101c35d3cf7dd0fd1621fedd4cb0205055d6594ba76"
+    },
+    "documentation/08_relationship_model.md": {
+      "size_bytes": 517,
+      "sha256": "eab20994327c0a82077b20fd4125f0d0052834f5d0cfac79ca0f401b17fc6408"
+    },
+    "documentation/09_process_phase.md": {
+      "size_bytes": 967,
+      "sha256": "9e44c28f8c3a9e6385541d409fd5aa2d7a40c30869079e39c88ac622e47c5c61"
+    },
+    "documentation/10_cleaning_methodology.md": {
+      "size_bytes": 783,
+      "sha256": "1be71b401f98ecff65ede9191673e0538cea8aa9b9785ec996653f6ecd7de635"
+    },
+    "documentation/11_analyze_phase.md": {
+      "size_bytes": 1412,
+      "sha256": "ef1b6786689b0e51c0ae935df2c4eca8d18e7a72066a4e74e7f127a6b19b8c47"
+    },
+    "documentation/12_modeling_methodology.md": {
+      "size_bytes": 1196,
+      "sha256": "03256b045746e81f8e1653fd3bee0bf65b1129e3074611c5f50e4806b60c0086"
+    },
+    "documentation/13_model_performance.md": {
+      "size_bytes": 1038,
+      "sha256": "6820439439eb6b47e67330b0f2908daf915cdc0b787a6a3fd5718f9d9e59ef6b"
+    },
+    "documentation/14_analyze_phase_gate.md": {
+      "size_bytes": 658,
+      "sha256": "8bce5ab8cc685ceec4adcbcf0409d72c446b4e2bf0441cf42e36d7b9af6ca316"
+    },
+    "documentation/15_share_phase.md": {
+      "size_bytes": 976,
+      "sha256": "1c6454d6ee11092ef25d8175ecb2be7959fab9fdf2d103235d6aee622d556764"
+    },
+    "documentation/16_dashboard_design_specification.md": {
+      "size_bytes": 640,
+      "sha256": "8044f0729caef43a0f14cc1e595420e91e60857301106aeb0e3f67dc4d227280"
+    },
+    "documentation/17_portfolio_storytelling.md": {
+      "size_bytes": 980,
+      "sha256": "3870350ecde661e8477eb1a9f000388c6119a6155a51518a5dcc095b2c0b9f18"
+    },
+    "documentation/18_share_phase_gate.md": {
+      "size_bytes": 529,
+      "sha256": "1f205e5dbc9fec1242b82c428affdb9ca529af14554643b17abe001f390550c0"
+    },
+    "documentation/19_act_phase.md": {
+      "size_bytes": 1661,
+      "sha256": "6dec074ced941c3410a76d77f37128b2eafa055b777af4cc368b4d17ac0cd62c"
+    },
+    "documentation/20_model_governance.md": {
+      "size_bytes": 1252,
+      "sha256": "9ee301521141aede2f859c73cccb4061084f8693f8ebcd3f62e449fbb1bfec76"
+    },
+    "documentation/21_monitoring_and_controls.md": {
+      "size_bytes": 1485,
+      "sha256": "c6e4af4727f7537a38c36a5a4b334aa4b5f2cafd183e858fc10cd87309acc00e"
+    },
+    "documentation/22_act_phase_gate.md": {
+      "size_bytes": 885,
+      "sha256": "589b5b235768ad60130fc060a1057550b0733e018a689d5cc6d8cebb1c03e0cc"
+    },
+    "documentation/cleaning_log.csv": {
+      "size_bytes": 28942,
+      "sha256": "7e34a2dd13ea38ee07cdac29fb3a7d81ae7ae0afc5b5a162f00a643bf3abf79a"
+    },
+    "documentation/data_quality_results.csv": {
+      "size_bytes": 423,
+      "sha256": "93f9761ca1c7e3821a7d4ae532c353e5832b1d2680bb9eeab1d42b358a9b08ec"
+    },
+    "documentation/feature_lineage.csv": {
+      "size_bytes": 1928,
+      "sha256": "6e51dca0f76a195d81772911d44ed586d68caf7d3d4ffc21e7c5130bdc187bc0"
+    },
+    "documentation/final_validation_report.json": {
+      "size_bytes": 3999,
+      "sha256": "887df331f774b687de852bf8e6dda5c4b0c2362de05f16dde27d3a7980de868d"
+    },
+    "documentation/known_raw_data_quality_issues.csv": {
+      "size_bytes": 12855,
+      "sha256": "7daffe82c9cdab9aa4f44e9936927a145078710a7ac848095391c2491e09fc8a"
+    },
+    "documentation/model_card.md": {
+      "size_bytes": 1858,
+      "sha256": "bbf5728a3df0a0405ff97c79acffe257a64acb042d2b361d77a00d53e43d22a0"
+    },
+    "documentation/model_validation_summary.json": {
+      "size_bytes": 842,
+      "sha256": "8e58e661448221257041970b6fab63991da026bbb2d41049f30d2949498277f4"
+    },
+    "documentation/predictive_overrun_data_dictionary.xlsx": {
+      "size_bytes": 15638,
+      "sha256": "6a5798bcd58dda77c4206a9db78310ecb3b404537e13ef4dc80198be565b0b50"
+    },
+    "documentation/predictive_overrun_process_log.xlsx": {
+      "size_bytes": 33307,
+      "sha256": "3ee797f90d2437087ace4c756664e9e816da25da7d334aabb3c2189edb7a1dc7"
+    },
+    "documentation/process_validation_report.json": {
+      "size_bytes": 755,
+      "sha256": "876ffd91e2b6911778d86b7fdf1f0ff1a873273b0d62789996284912ef44eea0"
+    },
+    "documentation/quarantine_records.csv": {
+      "size_bytes": 96246,
+      "sha256": "000773597341cfeae6a8e7724f25ae1384ea003a48c2a7b3efb9cda87dfa3b72"
+    },
+    "documentation/raw_dataset_profile.json": {
+      "size_bytes": 615,
+      "sha256": "9543c14bf7f9053c0d3bb87954d5aed70264f2674b4b2947ea1617939a2a95b5"
+    },
+    "documentation/row_reconciliation.csv": {
+      "size_bytes": 233,
+      "sha256": "052202e16b5b1abe542c652158a5b22852ef26546a560f0c1a90675d073c8a55"
+    },
+    "portfolio/README.md": {
+      "size_bytes": 94,
+      "sha256": "a58ed50091ce95620639b3aa614f9b35c0ecb9b332e526b03c2a17cb917ec91c"
+    },
+    "project_config.json": {
+      "size_bytes": 3000,
+      "sha256": "542f2c7679c9acb67176d7440a90aac118e44926a512a4a3541b9bb1509c09de"
+    },
+    "reports/Predictive_Construction_Project_Overrun_Model_Case_Study.docx": {
+      "size_bytes": 1178001,
+      "sha256": "a92c71a0ea43d709b5198d159f050c5ab8fe688ba185cbf394fd8afe5428a00f"
+    },
+    "reports/Predictive_Construction_Project_Overrun_Model_Case_Study.pdf": {
+      "size_bytes": 1145855,
+      "sha256": "553727466ccd9d8f6935a0cecc9b5644f6014faff016ebf8406f0ac15c2505f9"
+    },
+    "reports/README.md": {
+      "size_bytes": 144,
+      "sha256": "efb64803fa8d10e0dcd8d21b187d682d06d1a76cf8c2468e2854bd9b76729ee7"
+    },
+    "requirements.txt": {
+      "size_bytes": 53,
+      "sha256": "ab9c7d3ebf7681058b040ca54bb4ccbc4b8e0c77bf37fb343fc0a61dfcc222a2"
+    },
+    "share/START_HERE.md": {
+      "size_bytes": 191,
+      "sha256": "2ab1708f7d8a1a3fcf80ebbf30adc954f1b9d93868c92292f01c6bdfa8a5b10f"
+    },
+    "share/assets/executive_model_dashboard.png": {
+      "size_bytes": 308527,
+      "sha256": "13ca7835323a16e0d444e57d09481f2a7a77a38a5f03d9917acf3f903be8ba47"
+    },
+    "share/assets/feature_driver_dashboard.png": {
+      "size_bytes": 228010,
+      "sha256": "a0a9339593a7ece71e82a54dd29a7111c55cf8a3ec6388ed1ad866f83e9f979e"
+    },
+    "share/assets/model_performance_dashboard.png": {
+      "size_bytes": 233842,
+      "sha256": "e6c96a9604400df933640a61652b964a271ed1a1dc8db213d019bf9308c0dfdf"
+    },
+    "share/assets/project_risk_dashboard.png": {
+      "size_bytes": 440349,
+      "sha256": "d89cc90cdbccb26120624bea733b2eb57b9c059116dbdeb45a69eaea0a66717c"
+    },
+    "share/portfolio/in_project_case_study.html": {
+      "size_bytes": 3097,
+      "sha256": "a30e8b64d1b69f722993adeff78dda8e0c7f8b15f053a2a63c2d8b2a399c1186"
+    },
+    "share/portfolio/linkedin_and_github_copy.md": {
+      "size_bytes": 2089,
+      "sha256": "ceac69c061fe4a24484412fb98b50668975b08416a6d00413f79eb15cf7408e5"
+    },
+    "share/portfolio/personal_case_study.html": {
+      "size_bytes": 3866,
+      "sha256": "382dd89cb0a0255ef8d3a4292c9bf3fbce35fbf587620a1fea8eade052b16180"
+    },
+    "share/predictive_overrun_share_dashboard.xlsx": {
+      "size_bytes": 31574,
+      "sha256": "65ee68011c1057f2e9cae46047e418344919769d1dd21df1d88ffacc2f678076"
+    },
+    "share/specifications/power_bi_tableau_build_spec.md": {
+      "size_bytes": 4096,
+      "sha256": "32f539ab240d1cd5824a198f55fe7209600a65f614651850385306bee91f3621"
+    },
+    "sql/01_create_model_schema.sql": {
+      "size_bytes": 199,
+      "sha256": "ebc58aa96c51cbf7dde2c9c152d7caa1d77c899776d6626687dc52873d248884"
+    },
+    "sql/02_validation_queries.sql": {
+      "size_bytes": 224,
+      "sha256": "244c1efd44888662a9a89cf818cc690cdd5433bd852d1e0ab0f8d1982c1eac72"
+    },
+    "sql/03_analysis_queries.sql": {
+      "size_bytes": 968,
+      "sha256": "b393398401418bcbdf788b33999d69d7bc2104d17f89a6f075d6a0c6b99f890c"
+    },
+    "sql/README.md": {
+      "size_bytes": 156,
+      "sha256": "c8c23f4a31c332a2e8c90ca35b7b4b718f7e9cf9f0200a1b7590acd97b177cc6"
+    }
+  }
+}

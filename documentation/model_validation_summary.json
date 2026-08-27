@@ -1,0 +1,33 @@
+{
+  "feature_count": 40,
+  "numeric_feature_count": 31,
+  "categorical_feature_count": 9,
+  "train_projects": 1577,
+  "validation_projects": 349,
+  "test_projects": 436,
+  "champions": {
+    "Cost_Overrun_Flag": {
+      "model_name": "Random Forest",
+      "threshold": 0.43500000000000005,
+      "validation_pr_auc": 0.7238477119984114
+    },
+    "Schedule_Delay_Flag": {
+      "model_name": "Logistic Regression",
+      "threshold": 0.695,
+      "validation_pr_auc": 0.6912972428344152
+    },
+    "Final_Cost_Overrun_Pct": {
+      "model_name": "Random Forest Regressor",
+      "validation_mae": 0.032640047044978214
+    },
+    "Final_Schedule_Delay_Days": {
+      "model_name": "Ridge Regression",
+      "validation_mae": 15.762129247053526
+    }
+  },
+  "risk_band_distribution": {
+    "Red": 188,
+    "Yellow": 138,
+    "Green": 110
+  }
+}

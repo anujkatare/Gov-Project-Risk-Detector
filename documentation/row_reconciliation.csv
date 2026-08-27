@@ -1,0 +1,4 @@
+﻿Table,Raw_Rows,Duplicate_Removals,Direct_Quarantined_Rows,Relationship_Quarantined_Rows,Clean_Rows,Reconciled
+projects_raw,2412,12,22,16,2362,Yes
+workflow_features_raw,2417,12,43,0,2362,Yes
+outcomes_raw,2416,12,26,16,2362,Yes

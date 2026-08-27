@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite this repository if you use its synthetic data, code, or documentation."
+title: "Predictive Construction Project Overrun Model"
+type: software
+authors:
+  - family-names: "Dickson"
+    given-names: "Narciso M."
+repository-code: "https://github.com/ND3404/predictive-construction-project-overrun-model"
+url: "https://github.com/ND3404/predictive-construction-project-overrun-model"
+version: "1.0.0"
+date-released: "2026-08-05"
+license: MIT

@@ -1,0 +1,33 @@
+{
+  "status": "ready_for_github_publication",
+  "repository_name": "predictive-construction-project-overrun-model",
+  "expected_owner": "ND3404",
+  "public_package_path": "/mnt/data/predictive-construction-project-overrun-model-public",
+  "required_files_present": {
+    "README.md": true,
+    "LICENSE": true,
+    "DATA_LICENSE.md": true,
+    "CITATION.cff": true,
+    "START_HERE.md": true,
+    "assets/executive_model_dashboard.png": true,
+    "reports/Predictive_Construction_Project_Overrun_Model_Case_Study.pdf": true,
+    "dashboards/predictive_overrun_share_dashboard.xlsx": true,
+    "dashboards/predictive_overrun_model_act_plan.xlsx": true,
+    "analysis/tables/classification_model_metrics.csv": true,
+    "analysis/tables/regression_model_metrics.csv": true
+  },
+  "synthetic_disclosure_in_readme": true,
+  "security_hits": [],
+  "project_1_or_2_modified": false,
+  "model_summary": {
+    "cost_roc_auc": 0.899,
+    "cost_pr_auc": 0.774,
+    "schedule_roc_auc": 0.756,
+    "schedule_pr_auc": 0.524,
+    "risk_bands": {
+      "Red": 188,
+      "Yellow": 138,
+      "Green": 110
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "project": "Predictive Construction Project Overrun Model",
+  "project_code": "IP-DA-003",
+  "status": "Complete",
+  "phase_status": {
+    "Ask": "Complete",
+    "Prepare": "Complete",
+    "Process": "Complete",
+    "Analyze": "Complete",
+    "Share": "Complete",
+    "Act": "Complete"
+  },
+  "folder_separation": {
+    "project_1_modified": false,
+    "project_2_modified": false,
+    "project_3_independent": true
+  },
+  "process": {
+    "status": "Passed",
+    "clean_projects": 2362,
+    "clean_workflow_rows": 2362,
+    "clean_outcomes": 2362,
+    "modeling_rows": 2362,
+    "duplicate_removals": 36,
+    "quarantined_records": 123,
+    "cleaning_actions": 199,
+    "split_summary": {
+      "Train": {
+        "projects": 1577,
+        "cost_overrun_pct": 26.63,
+        "schedule_delay_pct": 22.19,
+        "combined_overrun_pct": 39.12
+      },
+      "Validation": {
+        "projects": 349,
+        "cost_overrun_pct": 28.08,
+        "schedule_delay_pct": 25.21,
+        "combined_overrun_pct": 41.83
+      },
+      "Test": {
+        "projects": 436,
+        "cost_overrun_pct": 25.46,
+        "schedule_delay_pct": 19.72,
+        "combined_overrun_pct": 38.07
+      }
+    },
+    "sqlite_quick_check": "ok",
+    "foreign_key_violations": 0
+  },
+  "model": {
+    "feature_count": 40,
+    "numeric_feature_count": 31,
+    "categorical_feature_count": 9,
+    "train_projects": 1577,
+    "validation_projects": 349,
+    "test_projects": 436,
+    "champions": {
+      "Cost_Overrun_Flag": {
+        "model_name": "Random Forest",
+        "threshold": 0.43500000000000005,
+        "validation_pr_auc": 0.7238477119984114
+      },
+      "Schedule_Delay_Flag": {
+        "model_name": "Logistic Regression",
+        "threshold": 0.695,
+        "validation_pr_auc": 0.6912972428344152
+      },
+      "Final_Cost_Overrun_Pct": {
+        "model_name": "Random Forest Regressor",
+        "validation_mae": 0.032640047044978214
+      },
+      "Final_Schedule_Delay_Days": {
+        "model_name": "Ridge Regression",
+        "validation_mae": 15.762129247053526
+      }
+    },
+    "risk_band_distribution": {
+      "Red": 188,
+      "Yellow": 138,
+      "Green": 110
+    }
+  },
+  "automation": {
+    "scoring_script_passed": true,
+    "projects_scored": 25,
+    "monitoring_status": "Review Required",
+    "monitoring_triggers": [
+      "Yellow PSI drift: Predicted_Schedule_Delay_Probability = 0.105"
+    ]
+  },
+  "workbooks": [
+    {
+      "path": "documentation/predictive_overrun_data_dictionary.xlsx",
+      "size_bytes": 15638,
+      "formula_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+    },
+    {
+      "path": "documentation/predictive_overrun_process_log.xlsx",
+      "size_bytes": 33307,
+      "formula_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+    },
+    {
+      "path": "analysis/excel/predictive_overrun_model_analysis.xlsx",
+      "size_bytes": 31802,
+      "formula_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+    },
+    {
+      "path": "share/predictive_overrun_share_dashboard.xlsx",
+      "size_bytes": 31574,
+      "formula_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+    },
+    {
+      "path": "act/predictive_overrun_model_act_plan.xlsx",
+      "size_bytes": 35087,
+      "formula_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+    }
+  ],
+  "final_report": {
+    "docx_pages_rendered_and_reviewed": 9,
+    "pdf_pages_rendered": 9,
+    "docx": "reports/Predictive_Construction_Project_Overrun_Model_Case_Study.docx",
+    "pdf": "reports/Predictive_Construction_Project_Overrun_Model_Case_Study.pdf"
+  },
+  "security": {
+    "secret_or_private_path_hits": [],
+    "passed": true
+  },
+  "controls": {
+    "synthetic_data_disclosure_retained": true,
+    "production_use_authorized": false,
+    "human_review_required": true,
+    "temporal_degradation_disclosed": true,
+    "outcome_leakage_prohibited": true
+  }
+}

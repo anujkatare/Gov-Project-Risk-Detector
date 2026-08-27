@@ -1,0 +1,200 @@
+﻿Action_ID,Table,Record_ID,Field,Issue_Type,Raw_Value,Clean_Value,Action,Evidence,Disposition
+CLN-0001,projects_raw,PRJ3-01017,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0002,projects_raw,PRJ3-00981,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0003,projects_raw,PRJ3-01458,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0004,projects_raw,PRJ3-01916,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0005,projects_raw,PRJ3-01811,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0006,projects_raw,PRJ3-00522,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0007,projects_raw,PRJ3-00979,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0008,projects_raw,PRJ3-00717,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0009,projects_raw,PRJ3-01199,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0010,projects_raw,PRJ3-01822,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0011,projects_raw,PRJ3-02148,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0012,projects_raw,PRJ3-00573,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0013,workflow_features_raw,PRJ3-01952,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0014,workflow_features_raw,PRJ3-00962,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0015,workflow_features_raw,PRJ3-02025,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0016,workflow_features_raw,PRJ3-02285,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0017,workflow_features_raw,PRJ3-00187,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0018,workflow_features_raw,PRJ3-01090,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0019,workflow_features_raw,PRJ3-00232,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0020,workflow_features_raw,PRJ3-00321,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0021,workflow_features_raw,PRJ3-00652,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0022,workflow_features_raw,PRJ3-01924,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0023,workflow_features_raw,PRJ3-00856,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0024,workflow_features_raw,PRJ3-01339,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0025,outcomes_raw,PRJ3-00546,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0026,outcomes_raw,PRJ3-00997,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0027,outcomes_raw,PRJ3-00959,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0028,outcomes_raw,PRJ3-01963,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0029,outcomes_raw,PRJ3-00625,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0030,outcomes_raw,PRJ3-01006,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0031,outcomes_raw,PRJ3-01616,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0032,outcomes_raw,PRJ3-00227,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0033,outcomes_raw,PRJ3-01830,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0034,outcomes_raw,PRJ3-01990,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0035,outcomes_raw,PRJ3-00051,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0036,outcomes_raw,PRJ3-02244,Entire row,Exact duplicate,Duplicate,,Remove exact duplicate,Exact row match,Removed
+CLN-0037,projects_raw,PRJ3-00076,Complexity_Level,Categorical standardization,low ,Low,Map controlled value,Approved mapping rule,Repaired
+CLN-0038,projects_raw,PRJ3-00097,Complexity_Level,Categorical standardization,low ,Low,Map controlled value,Approved mapping rule,Repaired
+CLN-0039,projects_raw,PRJ3-00134,Row,Critical validation failure,,,Quarantine row,Snapshot_Data_Completeness_Pct outside 0-1,Quarantined
+CLN-0040,projects_raw,PRJ3-00145,Owner_Decision_Profile,Categorical standardization,standard ,Standard,Map controlled value,Approved mapping rule,Repaired
+CLN-0041,projects_raw,PRJ3-00148,Row,Critical validation failure,,,Quarantine row,Missing critical field Labor_Productivity_Index,Quarantined
+CLN-0042,projects_raw,PRJ3-00197,Complexity_Level,Categorical standardization,low ,Low,Map controlled value,Approved mapping rule,Repaired
+CLN-0043,projects_raw,PRJ3-00347,Delivery_Method,Categorical standardization,Design Build,Design-Build,Map controlled value,Approved mapping rule,Repaired
+CLN-0044,projects_raw,PRJ3-00366,Owner_Decision_Profile,Categorical standardization,SLOW,Slow,Map controlled value,Approved mapping rule,Repaired
+CLN-0045,projects_raw,PRJ3-00404,Digital_Coordination_Level,Categorical standardization,HIGH,High,Map controlled value,Approved mapping rule,Repaired
+CLN-0046,projects_raw,PRJ3-00432,Row,Critical validation failure,,,Quarantine row,Missing critical field SPI_Snapshot,Quarantined
+CLN-0047,projects_raw,PRJ3-00510,Complexity_Level,Categorical standardization,MODERATE,Moderate,Map controlled value,Approved mapping rule,Repaired
+CLN-0048,projects_raw,PRJ3-00630,Owner_Decision_Profile,Categorical standardization,standard ,Standard,Map controlled value,Approved mapping rule,Repaired
+CLN-0049,projects_raw,PRJ3-00745,Row,Critical validation failure,,,Quarantine row,Snapshot_Date before Start_Date,Quarantined
+CLN-0050,projects_raw,PRJ3-00766,Delivery_Method,Categorical standardization,Design Build,Design-Build,Map controlled value,Approved mapping rule,Repaired
+CLN-0051,projects_raw,PRJ3-00862,Owner_Decision_Profile,Categorical standardization,standard ,Standard,Map controlled value,Approved mapping rule,Repaired
+CLN-0052,projects_raw,PRJ3-00911,Row,Critical validation failure,,,Quarantine row,Original_Budget must be positive,Quarantined
+CLN-0053,projects_raw,PRJ3-00946,Complexity_Level,Categorical standardization,high,High,Map controlled value,Approved mapping rule,Repaired
+CLN-0054,projects_raw,PRJ3-00973,Row,Critical validation failure,,,Quarantine row,Missing critical field CPI_Snapshot,Quarantined
+CLN-0055,projects_raw,PRJ3-01004,Delivery_Method,Categorical standardization,DBB,Design-Bid-Build,Map controlled value,Approved mapping rule,Repaired
+CLN-0056,projects_raw,PRJ3-01015,Row,Critical validation failure,,,Quarantine row,Snapshot_Date before Start_Date,Quarantined
+CLN-0057,projects_raw,PRJ3-01074,Delivery_Method,Categorical standardization,Design Build,Design-Build,Map controlled value,Approved mapping rule,Repaired
+CLN-0058,projects_raw,PRJ3-01102,Delivery_Method,Categorical standardization,CM at Risk,CMAR,Map controlled value,Approved mapping rule,Repaired
+CLN-0059,projects_raw,PRJ3-01192,Row,Critical validation failure,,,Quarantine row,Missing critical field Labor_Productivity_Index,Quarantined
+CLN-0060,projects_raw,PRJ3-01242,Owner_Decision_Profile,Categorical standardization,FAST,Fast,Map controlled value,Approved mapping rule,Repaired
+CLN-0061,projects_raw,PRJ3-01258,Delivery_Method,Categorical standardization,Design Build,Design-Build,Map controlled value,Approved mapping rule,Repaired
+CLN-0062,projects_raw,PRJ3-01294,Row,Critical validation failure,,,Quarantine row,Snapshot_Date before Start_Date,Quarantined
+CLN-0063,projects_raw,PRJ3-01349,Delivery_Method,Categorical standardization,Design Build,Design-Build,Map controlled value,Approved mapping rule,Repaired
+CLN-0064,projects_raw,PRJ3-01350,Digital_Coordination_Level,Categorical standardization,moderate ,Moderate,Map controlled value,Approved mapping rule,Repaired
+CLN-0065,projects_raw,PRJ3-01356,Row,Critical validation failure,,,Quarantine row,Snapshot_Date before Start_Date,Quarantined
+CLN-0066,projects_raw,PRJ3-01360,Delivery_Method,Categorical standardization,CM at Risk,CMAR,Map controlled value,Approved mapping rule,Repaired
+CLN-0067,projects_raw,PRJ3-01396,Row,Critical validation failure,,,Quarantine row,Snapshot_Data_Completeness_Pct outside 0-1,Quarantined
+CLN-0068,projects_raw,PRJ3-01448,Owner_Decision_Profile,Categorical standardization,FAST,Fast,Map controlled value,Approved mapping rule,Repaired
+CLN-0069,projects_raw,PRJ3-01449,Row,Critical validation failure,,,Quarantine row,Snapshot_Data_Completeness_Pct outside 0-1,Quarantined
+CLN-0070,projects_raw,PRJ3-01483,Owner_Decision_Profile,Categorical standardization,FAST,Fast,Map controlled value,Approved mapping rule,Repaired
+CLN-0071,projects_raw,PRJ3-01494,Delivery_Method,Categorical standardization,DBB,Design-Bid-Build,Map controlled value,Approved mapping rule,Repaired
+CLN-0072,projects_raw,PRJ3-01501,Delivery_Method,Categorical standardization,DBB,Design-Bid-Build,Map controlled value,Approved mapping rule,Repaired
+CLN-0073,projects_raw,PRJ3-01504,Complexity_Level,Categorical standardization,VERY HIGH,Very High,Map controlled value,Approved mapping rule,Repaired
+CLN-0074,projects_raw,PRJ3-01597,Row,Critical validation failure,,,Quarantine row,Snapshot_Date before Start_Date,Quarantined
+CLN-0075,projects_raw,PRJ3-01598,Owner_Decision_Profile,Categorical standardization,standard ,Standard,Map controlled value,Approved mapping rule,Repaired
+CLN-0076,projects_raw,PRJ3-01703,Row,Critical validation failure,,,Quarantine row,Missing critical field Labor_Productivity_Index,Quarantined
+CLN-0077,projects_raw,PRJ3-01756,Digital_Coordination_Level,Categorical standardization,HIGH,High,Map controlled value,Approved mapping rule,Repaired
+CLN-0078,projects_raw,PRJ3-01797,Digital_Coordination_Level,Categorical standardization,moderate ,Moderate,Map controlled value,Approved mapping rule,Repaired
+CLN-0079,projects_raw,PRJ3-01803,Row,Critical validation failure,,,Quarantine row,Missing critical field CPI_Snapshot,Quarantined
+CLN-0080,projects_raw,PRJ3-01834,Complexity_Level,Categorical standardization,MODERATE,Moderate,Map controlled value,Approved mapping rule,Repaired
+CLN-0081,projects_raw,PRJ3-01850,Row,Critical validation failure,,,Quarantine row,Snapshot_Data_Completeness_Pct outside 0-1,Quarantined
+CLN-0082,projects_raw,PRJ3-01862,Row,Critical validation failure,,,Quarantine row,Missing critical field SPI_Snapshot,Quarantined
+CLN-0083,projects_raw,PRJ3-01866,Delivery_Method,Categorical standardization,Design Build,Design-Build,Map controlled value,Approved mapping rule,Repaired
+CLN-0084,projects_raw,PRJ3-01889,Delivery_Method,Categorical standardization,CM at Risk,CMAR,Map controlled value,Approved mapping rule,Repaired
+CLN-0085,projects_raw,PRJ3-01922,Owner_Decision_Profile,Categorical standardization,standard ,Standard,Map controlled value,Approved mapping rule,Repaired
+CLN-0086,projects_raw,PRJ3-01936,Digital_Coordination_Level,Categorical standardization,moderate ,Moderate,Map controlled value,Approved mapping rule,Repaired
+CLN-0087,projects_raw,PRJ3-01974,Row,Critical validation failure,,,Quarantine row,Missing critical field Labor_Productivity_Index,Quarantined
+CLN-0088,projects_raw,PRJ3-02078,Row,Critical validation failure,,,Quarantine row,Snapshot_Data_Completeness_Pct outside 0-1,Quarantined
+CLN-0089,projects_raw,PRJ3-02110,Digital_Coordination_Level,Categorical standardization,moderate ,Moderate,Map controlled value,Approved mapping rule,Repaired
+CLN-0090,projects_raw,PRJ3-02155,Complexity_Level,Categorical standardization,VERY HIGH,Very High,Map controlled value,Approved mapping rule,Repaired
+CLN-0091,projects_raw,PRJ3-02158,Row,Critical validation failure,,,Quarantine row,Snapshot_Date before Start_Date,Quarantined
+CLN-0092,projects_raw,PRJ3-02166,Row,Critical validation failure,,,Quarantine row,Missing critical field Labor_Productivity_Index,Quarantined
+CLN-0093,projects_raw,PRJ3-02255,Row,Critical validation failure,,,Quarantine row,Missing critical field CPI_Snapshot,Quarantined
+CLN-0094,projects_raw,PRJ3-02350,Digital_Coordination_Level,Categorical standardization,moderate ,Moderate,Map controlled value,Approved mapping rule,Repaired
+CLN-0095,workflow_features_raw,PRJ3-00010,Row,Critical validation failure,,,Quarantine row,Missing critical field Contingency_Utilization_Pct,Quarantined
+CLN-0096,workflow_features_raw,PRJ3-00134,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0097,workflow_features_raw,PRJ3-00148,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0098,workflow_features_raw,PRJ3-00432,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0099,workflow_features_raw,PRJ3-00514,Row,Critical validation failure,,,Quarantine row,Missing critical field Avg_RFI_Response_Days,Quarantined
+CLN-0100,workflow_features_raw,PRJ3-00518,Row,Critical validation failure,,,Quarantine row,Overdue_RFI_Rate outside range,Quarantined
+CLN-0101,workflow_features_raw,PRJ3-00525,Row,Critical validation failure,,,Quarantine row,Missing critical field Avg_RFI_Response_Days,Quarantined
+CLN-0102,workflow_features_raw,PRJ3-00551,Row,Critical validation failure,,,Quarantine row,Overdue_RFI_Rate outside range,Quarantined
+CLN-0103,workflow_features_raw,PRJ3-00671,Row,Critical validation failure,,,Quarantine row,RFI_On_Time_Rate outside range,Quarantined
+CLN-0104,workflow_features_raw,PRJ3-00732,Row,Critical validation failure,,,Quarantine row,Missing critical field Contingency_Utilization_Pct,Quarantined
+CLN-0105,workflow_features_raw,PRJ3-00745,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0106,workflow_features_raw,PRJ3-00747,Row,Critical validation failure,,,Quarantine row,Missing critical field Avg_RFI_Response_Days,Quarantined
+CLN-0107,workflow_features_raw,PRJ3-00810,Row,Critical validation failure,,,Quarantine row,Missing critical field Change_Approval_Cycle_Days,Quarantined
+CLN-0108,workflow_features_raw,PRJ3-00911,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0109,workflow_features_raw,PRJ3-00973,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0110,workflow_features_raw,PRJ3-01015,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0111,workflow_features_raw,PRJ3-01180,Row,Critical validation failure,,,Quarantine row,Pending_Change_Exposure_Pct_Budget outside range,Quarantined
+CLN-0112,workflow_features_raw,PRJ3-01192,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0113,workflow_features_raw,PRJ3-01294,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0114,workflow_features_raw,PRJ3-01334,Row,Critical validation failure,,,Quarantine row,Missing critical field Contingency_Utilization_Pct,Quarantined
+CLN-0115,workflow_features_raw,PRJ3-01356,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0116,workflow_features_raw,PRJ3-01396,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0117,workflow_features_raw,PRJ3-01449,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0118,workflow_features_raw,PRJ3-01481,Row,Critical validation failure,,,Quarantine row,Missing critical field Avg_RFI_Response_Days,Quarantined
+CLN-0119,workflow_features_raw,PRJ3-01597,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0120,workflow_features_raw,PRJ3-01703,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0121,workflow_features_raw,PRJ3-01803,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0122,workflow_features_raw,PRJ3-01812,Row,Critical validation failure,,,Quarantine row,RFI_On_Time_Rate outside range,Quarantined
+CLN-0123,workflow_features_raw,PRJ3-01850,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0124,workflow_features_raw,PRJ3-01862,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0125,workflow_features_raw,PRJ3-01974,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0126,workflow_features_raw,PRJ3-02011,Row,Critical validation failure,,,Quarantine row,Missing critical field Avg_RFI_Response_Days,Quarantined
+CLN-0127,workflow_features_raw,PRJ3-02078,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0128,workflow_features_raw,PRJ3-02158,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0129,workflow_features_raw,PRJ3-02166,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0130,workflow_features_raw,PRJ3-02205,Row,Critical validation failure,,,Quarantine row,RFI_On_Time_Rate outside range,Quarantined
+CLN-0131,workflow_features_raw,PRJ3-02255,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0132,workflow_features_raw,PRJ3-02307,Row,Critical validation failure,,,Quarantine row,Missing critical field Avg_RFI_Response_Days,Quarantined
+CLN-0133,workflow_features_raw,ORPHAN-WF-01,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0134,workflow_features_raw,ORPHAN-WF-02,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0135,workflow_features_raw,ORPHAN-WF-03,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0136,workflow_features_raw,ORPHAN-WF-04,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0137,workflow_features_raw,ORPHAN-WF-05,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0138,outcomes_raw,PRJ3-00134,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0139,outcomes_raw,PRJ3-00148,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0140,outcomes_raw,PRJ3-00212,Cost_Overrun_Flag,Invalid target value,9,0,Recalculate threshold flag,Derived from final outcome,Repaired
+CLN-0141,outcomes_raw,PRJ3-00404,Cost_Overrun_Flag,Invalid target value,9,1,Recalculate threshold flag,Derived from final outcome,Repaired
+CLN-0142,outcomes_raw,PRJ3-00432,Cost_Overrun_Flag,Invalid target value,9,1,Recalculate threshold flag,Derived from final outcome,Repaired
+CLN-0143,outcomes_raw,PRJ3-00432,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0144,outcomes_raw,PRJ3-00745,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0145,outcomes_raw,PRJ3-00835,Cost_Overrun_Flag,Invalid target value,9,0,Recalculate threshold flag,Derived from final outcome,Repaired
+CLN-0146,outcomes_raw,PRJ3-00911,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0147,outcomes_raw,PRJ3-00973,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0148,outcomes_raw,PRJ3-01015,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0149,outcomes_raw,PRJ3-01192,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0150,outcomes_raw,PRJ3-01294,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0151,outcomes_raw,PRJ3-01356,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0152,outcomes_raw,PRJ3-01396,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0153,outcomes_raw,PRJ3-01449,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0154,outcomes_raw,PRJ3-01597,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0155,outcomes_raw,PRJ3-01703,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0156,outcomes_raw,PRJ3-01803,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0157,outcomes_raw,PRJ3-01850,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0158,outcomes_raw,PRJ3-01862,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0159,outcomes_raw,PRJ3-01974,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0160,outcomes_raw,PRJ3-02078,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0161,outcomes_raw,PRJ3-02158,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0162,outcomes_raw,PRJ3-02166,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0163,outcomes_raw,PRJ3-02255,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0164,outcomes_raw,ORPHAN-OUT-01,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0165,outcomes_raw,ORPHAN-OUT-02,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0166,outcomes_raw,ORPHAN-OUT-03,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0167,outcomes_raw,ORPHAN-OUT-04,Row,Critical validation failure,,,Quarantine row,Project_ID does not reference a valid clean project,Quarantined
+CLN-0168,projects_clean_candidate,PRJ3-00010,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0169,projects_clean_candidate,PRJ3-00514,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0170,projects_clean_candidate,PRJ3-00518,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0171,projects_clean_candidate,PRJ3-00525,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0172,projects_clean_candidate,PRJ3-00551,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0173,projects_clean_candidate,PRJ3-00671,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0174,projects_clean_candidate,PRJ3-00732,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0175,projects_clean_candidate,PRJ3-00747,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0176,projects_clean_candidate,PRJ3-00810,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0177,projects_clean_candidate,PRJ3-01180,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0178,projects_clean_candidate,PRJ3-01334,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0179,projects_clean_candidate,PRJ3-01481,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0180,projects_clean_candidate,PRJ3-01812,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0181,projects_clean_candidate,PRJ3-02011,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0182,projects_clean_candidate,PRJ3-02205,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0183,projects_clean_candidate,PRJ3-02307,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0184,outcomes_clean_candidate,PRJ3-00010,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0185,outcomes_clean_candidate,PRJ3-00514,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0186,outcomes_clean_candidate,PRJ3-00518,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0187,outcomes_clean_candidate,PRJ3-00525,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0188,outcomes_clean_candidate,PRJ3-00551,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0189,outcomes_clean_candidate,PRJ3-00671,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0190,outcomes_clean_candidate,PRJ3-00732,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0191,outcomes_clean_candidate,PRJ3-00747,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0192,outcomes_clean_candidate,PRJ3-00810,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0193,outcomes_clean_candidate,PRJ3-01180,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0194,outcomes_clean_candidate,PRJ3-01334,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0195,outcomes_clean_candidate,PRJ3-01481,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0196,outcomes_clean_candidate,PRJ3-01812,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0197,outcomes_clean_candidate,PRJ3-02011,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0198,outcomes_clean_candidate,PRJ3-02205,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined
+CLN-0199,outcomes_clean_candidate,PRJ3-02307,Project_ID,Incomplete model relationship,,,Quarantine from model dataset,One-to-one join requirement,Quarantined

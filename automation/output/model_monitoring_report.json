@@ -1,0 +1,22 @@
+{
+  "status": "Review Required",
+  "metrics": {
+    "Cost_Overrun_Flag": {
+      "roc_auc": 0.9090250090612542,
+      "pr_auc": 0.796149624148366,
+      "brier": 0.11736401726878957
+    },
+    "Schedule_Delay_Flag": {
+      "roc_auc": 0.7179560924168344,
+      "pr_auc": 0.5224798796142028,
+      "brier": 0.17925474441211134
+    }
+  },
+  "drift": {
+    "Predicted_Cost_Overrun_Probability": 0.00859602825484193,
+    "Predicted_Schedule_Delay_Probability": 0.10545217158135546
+  },
+  "triggers": [
+    "Yellow PSI drift: Predicted_Schedule_Delay_Probability = 0.105"
+  ]
+}

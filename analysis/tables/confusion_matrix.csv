@@ -1,0 +1,9 @@
+Target,Model,Cell,Count
+Cost_Overrun_Flag,Random Forest,TN,271
+Cost_Overrun_Flag,Random Forest,FP,54
+Cost_Overrun_Flag,Random Forest,FN,21
+Cost_Overrun_Flag,Random Forest,TP,90
+Schedule_Delay_Flag,Logistic Regression,TN,314
+Schedule_Delay_Flag,Logistic Regression,FP,36
+Schedule_Delay_Flag,Logistic Regression,FN,47
+Schedule_Delay_Flag,Logistic Regression,TP,39

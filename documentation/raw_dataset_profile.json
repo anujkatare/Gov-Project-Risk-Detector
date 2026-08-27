@@ -1,0 +1,24 @@
+{
+  "seed": 20260804,
+  "intended_projects": 2400,
+  "raw_counts": {
+    "projects_raw": 2412,
+    "workflow_features_raw": 2417,
+    "outcomes_raw": 2416
+  },
+  "quality_issue_count": 123,
+  "quality_issue_types": {
+    "Categorical standardization": 36,
+    "Missing critical value": 20,
+    "Invalid numeric value": 12,
+    "Invalid date sequence": 6,
+    "Invalid target value": 4,
+    "Exact duplicate": 36,
+    "Invalid foreign key": 9
+  },
+  "target_prevalence_before_quality_injection": {
+    "cost_overrun_flag_pct": 26.54,
+    "schedule_delay_flag_pct": 22.21,
+    "combined_overrun_flag_pct": 39.29
+  }
+}

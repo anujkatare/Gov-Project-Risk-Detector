@@ -1,0 +1,3 @@
+-- Schema is created reproducibly by data/processing/process_clean_and_validate.py.
+-- Tables: projects, workflow_features, outcomes, modeling_dataset.
+-- Views: vw_model_features, vw_split_summary.

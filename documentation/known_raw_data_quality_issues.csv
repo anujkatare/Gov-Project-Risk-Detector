@@ -1,0 +1,124 @@
+﻿Table,Record_ID,Issue_Type,Field,Raw_Value,Intended_Process_Action
+projects_raw,PRJ3-01448,Categorical standardization,Owner_Decision_Profile,FAST,Map to Fast
+projects_raw,PRJ3-01360,Categorical standardization,Delivery_Method,CM at Risk,Map to CMAR
+projects_raw,PRJ3-01004,Categorical standardization,Delivery_Method,DBB,Map to Design-Bid-Build
+projects_raw,PRJ3-00404,Categorical standardization,Digital_Coordination_Level,HIGH,Map to High
+projects_raw,PRJ3-00347,Categorical standardization,Delivery_Method,Design Build,Map to Design-Build
+projects_raw,PRJ3-01350,Categorical standardization,Digital_Coordination_Level,moderate ,Map to Moderate
+projects_raw,PRJ3-01483,Categorical standardization,Owner_Decision_Profile,FAST,Map to Fast
+projects_raw,PRJ3-01501,Categorical standardization,Delivery_Method,DBB,Map to Design-Bid-Build
+projects_raw,PRJ3-00197,Categorical standardization,Complexity_Level,low ,Map to Low
+projects_raw,PRJ3-00076,Categorical standardization,Complexity_Level,low ,Map to Low
+projects_raw,PRJ3-01074,Categorical standardization,Delivery_Method,Design Build,Map to Design-Build
+projects_raw,PRJ3-01797,Categorical standardization,Digital_Coordination_Level,moderate ,Map to Moderate
+projects_raw,PRJ3-00145,Categorical standardization,Owner_Decision_Profile,standard ,Map to Standard
+projects_raw,PRJ3-01834,Categorical standardization,Complexity_Level,MODERATE,Map to Moderate
+projects_raw,PRJ3-00946,Categorical standardization,Complexity_Level,high,Map to High
+projects_raw,PRJ3-02155,Categorical standardization,Complexity_Level,VERY HIGH,Map to Very High
+projects_raw,PRJ3-02350,Categorical standardization,Digital_Coordination_Level,moderate ,Map to Moderate
+projects_raw,PRJ3-00366,Categorical standardization,Owner_Decision_Profile,SLOW,Map to Slow
+projects_raw,PRJ3-01494,Categorical standardization,Delivery_Method,DBB,Map to Design-Bid-Build
+projects_raw,PRJ3-01598,Categorical standardization,Owner_Decision_Profile,standard ,Map to Standard
+projects_raw,PRJ3-01242,Categorical standardization,Owner_Decision_Profile,FAST,Map to Fast
+projects_raw,PRJ3-02110,Categorical standardization,Digital_Coordination_Level,moderate ,Map to Moderate
+projects_raw,PRJ3-01102,Categorical standardization,Delivery_Method,CM at Risk,Map to CMAR
+projects_raw,PRJ3-00630,Categorical standardization,Owner_Decision_Profile,standard ,Map to Standard
+projects_raw,PRJ3-01756,Categorical standardization,Digital_Coordination_Level,HIGH,Map to High
+projects_raw,PRJ3-01889,Categorical standardization,Delivery_Method,CM at Risk,Map to CMAR
+projects_raw,PRJ3-01349,Categorical standardization,Delivery_Method,Design Build,Map to Design-Build
+projects_raw,PRJ3-01922,Categorical standardization,Owner_Decision_Profile,standard ,Map to Standard
+projects_raw,PRJ3-00510,Categorical standardization,Complexity_Level,MODERATE,Map to Moderate
+projects_raw,PRJ3-01258,Categorical standardization,Delivery_Method,Design Build,Map to Design-Build
+projects_raw,PRJ3-00097,Categorical standardization,Complexity_Level,low ,Map to Low
+projects_raw,PRJ3-01504,Categorical standardization,Complexity_Level,VERY HIGH,Map to Very High
+projects_raw,PRJ3-00766,Categorical standardization,Delivery_Method,Design Build,Map to Design-Build
+projects_raw,PRJ3-01936,Categorical standardization,Digital_Coordination_Level,moderate ,Map to Moderate
+projects_raw,PRJ3-00862,Categorical standardization,Owner_Decision_Profile,standard ,Map to Standard
+projects_raw,PRJ3-01866,Categorical standardization,Delivery_Method,Design Build,Map to Design-Build
+projects_raw,PRJ3-01192,Missing critical value,Labor_Productivity_Index,1.0257,Repair only if deterministic evidence exists; otherwise quarantine
+projects_raw,PRJ3-02255,Missing critical value,CPI_Snapshot,1.0238,Repair only if deterministic evidence exists; otherwise quarantine
+projects_raw,PRJ3-01862,Missing critical value,SPI_Snapshot,1.0713,Repair only if deterministic evidence exists; otherwise quarantine
+projects_raw,PRJ3-02166,Missing critical value,Labor_Productivity_Index,1.0377,Repair only if deterministic evidence exists; otherwise quarantine
+projects_raw,PRJ3-01803,Missing critical value,CPI_Snapshot,0.8284,Repair only if deterministic evidence exists; otherwise quarantine
+projects_raw,PRJ3-01703,Missing critical value,Labor_Productivity_Index,0.9011,Repair only if deterministic evidence exists; otherwise quarantine
+projects_raw,PRJ3-00148,Missing critical value,Labor_Productivity_Index,0.8348,Repair only if deterministic evidence exists; otherwise quarantine
+projects_raw,PRJ3-00973,Missing critical value,CPI_Snapshot,0.8248,Repair only if deterministic evidence exists; otherwise quarantine
+projects_raw,PRJ3-01974,Missing critical value,Labor_Productivity_Index,0.9123,Repair only if deterministic evidence exists; otherwise quarantine
+projects_raw,PRJ3-00432,Missing critical value,SPI_Snapshot,0.9047,Repair only if deterministic evidence exists; otherwise quarantine
+workflow_features_raw,PRJ3-01334,Missing critical value,Contingency_Utilization_Pct,0.3418,Repair from related metrics when unambiguous; otherwise quarantine
+workflow_features_raw,PRJ3-00525,Missing critical value,Avg_RFI_Response_Days,8.885,Repair from related metrics when unambiguous; otherwise quarantine
+workflow_features_raw,PRJ3-02307,Missing critical value,Avg_RFI_Response_Days,9.288,Repair from related metrics when unambiguous; otherwise quarantine
+workflow_features_raw,PRJ3-00732,Missing critical value,Contingency_Utilization_Pct,0.1856,Repair from related metrics when unambiguous; otherwise quarantine
+workflow_features_raw,PRJ3-00010,Missing critical value,Contingency_Utilization_Pct,0.2721,Repair from related metrics when unambiguous; otherwise quarantine
+workflow_features_raw,PRJ3-00747,Missing critical value,Avg_RFI_Response_Days,7.343,Repair from related metrics when unambiguous; otherwise quarantine
+workflow_features_raw,PRJ3-00810,Missing critical value,Change_Approval_Cycle_Days,23.775,Repair from related metrics when unambiguous; otherwise quarantine
+workflow_features_raw,PRJ3-00514,Missing critical value,Avg_RFI_Response_Days,13.021,Repair from related metrics when unambiguous; otherwise quarantine
+workflow_features_raw,PRJ3-01481,Missing critical value,Avg_RFI_Response_Days,9.172,Repair from related metrics when unambiguous; otherwise quarantine
+workflow_features_raw,PRJ3-02011,Missing critical value,Avg_RFI_Response_Days,7.887,Repair from related metrics when unambiguous; otherwise quarantine
+projects_raw,PRJ3-02078,Invalid numeric value,Snapshot_Data_Completeness_Pct,-0.9772,Quarantine project row
+projects_raw,PRJ3-00911,Invalid numeric value,Original_Budget,-293198300.0,Quarantine project row
+projects_raw,PRJ3-01850,Invalid numeric value,Snapshot_Data_Completeness_Pct,-0.9732,Quarantine project row
+projects_raw,PRJ3-01396,Invalid numeric value,Snapshot_Data_Completeness_Pct,-0.9515,Quarantine project row
+projects_raw,PRJ3-01449,Invalid numeric value,Snapshot_Data_Completeness_Pct,-0.9345,Quarantine project row
+projects_raw,PRJ3-00134,Invalid numeric value,Snapshot_Data_Completeness_Pct,-0.9542,Quarantine project row
+workflow_features_raw,PRJ3-00671,Invalid numeric value,RFI_On_Time_Rate,1.5,Quarantine workflow row
+workflow_features_raw,PRJ3-01180,Invalid numeric value,Pending_Change_Exposure_Pct_Budget,1.5,Quarantine workflow row
+workflow_features_raw,PRJ3-00551,Invalid numeric value,Overdue_RFI_Rate,1.5,Quarantine workflow row
+workflow_features_raw,PRJ3-01812,Invalid numeric value,RFI_On_Time_Rate,1.5,Quarantine workflow row
+workflow_features_raw,PRJ3-00518,Invalid numeric value,Overdue_RFI_Rate,1.5,Quarantine workflow row
+workflow_features_raw,PRJ3-02205,Invalid numeric value,RFI_On_Time_Rate,1.5,Quarantine workflow row
+projects_raw,PRJ3-01356,Invalid date sequence,Snapshot_Date,2019-07-18,Quarantine project row
+projects_raw,PRJ3-00745,Invalid date sequence,Snapshot_Date,2021-03-08,Quarantine project row
+projects_raw,PRJ3-01294,Invalid date sequence,Snapshot_Date,2018-08-06,Quarantine project row
+projects_raw,PRJ3-01015,Invalid date sequence,Snapshot_Date,2022-01-23,Quarantine project row
+projects_raw,PRJ3-01597,Invalid date sequence,Snapshot_Date,2024-07-12,Quarantine project row
+projects_raw,PRJ3-02158,Invalid date sequence,Snapshot_Date,2021-04-23,Quarantine project row
+outcomes_raw,PRJ3-00432,Invalid target value,Cost_Overrun_Flag,9,Recalculate from final cost overrun percentage
+outcomes_raw,PRJ3-00212,Invalid target value,Cost_Overrun_Flag,9,Recalculate from final cost overrun percentage
+outcomes_raw,PRJ3-00835,Invalid target value,Cost_Overrun_Flag,9,Recalculate from final cost overrun percentage
+outcomes_raw,PRJ3-00404,Invalid target value,Cost_Overrun_Flag,9,Recalculate from final cost overrun percentage
+projects_raw,PRJ3-01017,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+projects_raw,PRJ3-00981,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+projects_raw,PRJ3-01458,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+projects_raw,PRJ3-01916,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+projects_raw,PRJ3-01811,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+projects_raw,PRJ3-00522,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+projects_raw,PRJ3-00979,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+projects_raw,PRJ3-00717,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+projects_raw,PRJ3-01199,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+projects_raw,PRJ3-01822,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+projects_raw,PRJ3-02148,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+projects_raw,PRJ3-00573,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,PRJ3-01952,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,PRJ3-00962,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,PRJ3-02025,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,PRJ3-02285,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,PRJ3-00187,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,PRJ3-01090,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,PRJ3-00232,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,PRJ3-00321,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,PRJ3-00652,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,PRJ3-01924,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,PRJ3-00856,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,PRJ3-01339,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+outcomes_raw,PRJ3-00546,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+outcomes_raw,PRJ3-00997,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+outcomes_raw,PRJ3-00959,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+outcomes_raw,PRJ3-01963,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+outcomes_raw,PRJ3-00625,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+outcomes_raw,PRJ3-01006,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+outcomes_raw,PRJ3-01616,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+outcomes_raw,PRJ3-00227,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+outcomes_raw,PRJ3-01830,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+outcomes_raw,PRJ3-01990,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+outcomes_raw,PRJ3-00051,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+outcomes_raw,PRJ3-02244,Exact duplicate,Entire row,Duplicate,Remove exact duplicate
+workflow_features_raw,ORPHAN-WF-01,Invalid foreign key,Project_ID,ORPHAN-WF-01,Quarantine orphan
+workflow_features_raw,ORPHAN-WF-02,Invalid foreign key,Project_ID,ORPHAN-WF-02,Quarantine orphan
+workflow_features_raw,ORPHAN-WF-03,Invalid foreign key,Project_ID,ORPHAN-WF-03,Quarantine orphan
+workflow_features_raw,ORPHAN-WF-04,Invalid foreign key,Project_ID,ORPHAN-WF-04,Quarantine orphan
+workflow_features_raw,ORPHAN-WF-05,Invalid foreign key,Project_ID,ORPHAN-WF-05,Quarantine orphan
+outcomes_raw,ORPHAN-OUT-01,Invalid foreign key,Project_ID,ORPHAN-OUT-01,Quarantine orphan
+outcomes_raw,ORPHAN-OUT-02,Invalid foreign key,Project_ID,ORPHAN-OUT-02,Quarantine orphan
+outcomes_raw,ORPHAN-OUT-03,Invalid foreign key,Project_ID,ORPHAN-OUT-03,Quarantine orphan
+outcomes_raw,ORPHAN-OUT-04,Invalid foreign key,Project_ID,ORPHAN-OUT-04,Quarantine orphan

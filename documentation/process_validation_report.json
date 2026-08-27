@@ -1,0 +1,32 @@
+{
+  "status": "Passed",
+  "clean_projects": 2362,
+  "clean_workflow_rows": 2362,
+  "clean_outcomes": 2362,
+  "modeling_rows": 2362,
+  "duplicate_removals": 36,
+  "quarantined_records": 123,
+  "cleaning_actions": 199,
+  "split_summary": {
+    "Train": {
+      "projects": 1577,
+      "cost_overrun_pct": 26.63,
+      "schedule_delay_pct": 22.19,
+      "combined_overrun_pct": 39.12
+    },
+    "Validation": {
+      "projects": 349,
+      "cost_overrun_pct": 28.08,
+      "schedule_delay_pct": 25.21,
+      "combined_overrun_pct": 41.83
+    },
+    "Test": {
+      "projects": 436,
+      "cost_overrun_pct": 25.46,
+      "schedule_delay_pct": 19.72,
+      "combined_overrun_pct": 38.07
+    }
+  },
+  "sqlite_quick_check": "ok",
+  "foreign_key_violations": 0
+}

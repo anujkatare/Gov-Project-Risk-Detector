@@ -1,0 +1,19 @@
+﻿Feature,Source Project,Definition,Modeling Role
+CPI_Snapshot,Project 1,Cost performance index at snapshot,Early cost-efficiency signal
+SPI_Snapshot,Project 1,Schedule performance index at snapshot,Early schedule-efficiency signal
+Cost_Variance_Pct_Snapshot,Project 1,Snapshot cost variance percentage,Current cost deviation
+Schedule_Variance_Days_Snapshot,Project 1,Snapshot schedule variance in days,Current schedule deviation
+Contingency_Utilization_Pct,Project 1,Contingency used divided by original contingency,Cost-risk absorption
+Avg_RFI_Response_Days,Project 2,Average final response days for RFIs to date,Decision-cycle condition
+Overdue_RFI_Rate,Project 2,Overdue open RFIs divided by RFIs to date,Backlog condition
+High_Critical_Overdue_Rate,Project 2,High/Critical overdue RFIs divided by RFIs to date,Critical decision exposure
+RFI_Revision_Rate,Project 2,RFIs with revisions divided by RFIs to date,Workflow quality
+RFI_to_Change_Rate,Project 2,RFIs linked to change divided by RFIs to date,Commercial conversion
+Approved_Change_Value_Pct_Budget,Projects 1 and 2,Approved change value divided by original budget,Approved commercial growth
+Pending_Change_Exposure_Pct_Budget,Project 2,Pending submitted value divided by original budget,Unresolved exposure
+Change_Approval_Cycle_Days,Project 2,Average approved change cycle at snapshot,Decision speed
+Old_Pending_Change_Rate,Project 2,Pending changes older than threshold divided by pending changes,Aging condition
+Forecast_Incorporation_Lag_Days,Project 2,Average days from approval to forecast incorporation,Forecast-control discipline
+Revision_Loop_Rate,Project 2,Workflow returns divided by relevant workflow events,Rework and quality
+Workflow_Handoff_Rate,Project 2,Role handoffs divided by workflow events,Coordination complexity
+Workflow_Risk_Score_Snapshot,Project 2,Transparent snapshot workflow-risk score,Composite operational signal
