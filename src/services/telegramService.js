@@ -1,7 +1,7 @@
 // Telegram Bot Alert Service for PAIMANA AI
 
 export const TELEGRAM_CONFIG = {
-  chatId: "8951589926",
+  chatId: "7613523329",
   botToken: "8891945925:AAEw7HUakcT3cCnOlCwzls8qtW1Bbmhued8",
   botUsername: "paimana_alert_bot"
 };
@@ -15,8 +15,8 @@ export async function sendTelegramAlert(project, triggerReason = "Manual Dispatc
   const url = `https://api.telegram.org/bot${TELEGRAM_CONFIG.botToken}/sendMessage`;
 
   const isCritical = project.riskScore >= 85;
-  const alertHeader = isCritical 
-    ? `🚨 *PAIMANA AI CRITICAL RISK ALERT (85+ SCORE)* 🚨` 
+  const alertHeader = isCritical
+    ? `🚨 *PAIMANA AI CRITICAL RISK ALERT (85+ SCORE)* 🚨`
     : `⚠️ *PAIMANA AI PROJECT RISK REPORT* ⚠️`;
 
   const messageText = `${alertHeader}
@@ -74,7 +74,7 @@ export async function sendHighRiskSummaryAlert(projects) {
   const highRiskProjects = projects.filter((p) => p.riskScore >= 85);
   const url = `https://api.telegram.org/bot${TELEGRAM_CONFIG.botToken}/sendMessage`;
 
-  let projectListText = highRiskProjects.map(p => 
+  let projectListText = highRiskProjects.map(p =>
     `• *${p.id}* - ${p.name}\n  *Risk Score:* ${p.riskScore}/100 | *Cost Overrun:* +${p.costEscalationPct}% | *Delay:* +${p.delayDays} Days`
   ).join("\n\n");
 
